@@ -1,0 +1,74 @@
+
+var변수는 과거에 쓰였던 변수임
+-> 엄청난 오류들이 존재하는데, 값을 할당하고 값을 선언해도 적용되는 것이 확인되어짐 --> 오류!!
+-> var변수는 블록 안에서 할당한 변수에 접근할 수 있음 -> 이렇게 되면 메모리 낭비가 엄청나게 되어짐
+
+
+
+value hoisting -> 변수 선언들을 위로 끌어올리는 행위를 지칭함 
+'use strict'쓰면 값같은 거 잘 맞춰서 써야됨 -> 문법틀리면 오류뜸
+
+let - 변수 (mutable)
+
+블록 밖에서는 블록 안에서 할당한 변수는 접근할 수 없음
+
+블록밖에 있는 변수들을 global변수라고 함 -> 이 변수들은 처음부터 끝까지 메모리에 상주하기 때문에 이왕이면 적게 사용하는 것이 좋음
+
+
+
+
+const - 한번 지정하면 뒤에서 값을 바꾸어도 바뀌지 않는 변수형 ( immutable )
+
+immutable을 사용 장점
+	security - 악의적인 값변경을 막을 수 있음
+	thread safety - 다양한 thread들이 변수에 접근해서 동시에 값을 변경할 수도 있는데, 이런 위험을 막을 수 있음
+	reduce human mistakes
+
+variable types
+
+primiitive - 더이상 나줘질 수 없는
+	number, string, boolean, null, undefined, null, ..
+
+object - 싱글 단위들을 묶어서 사용하는 것
+
+first-class function 
+	-> first-class function이 지원이 된다는 의미는 함수를 변수처럼 사용할 수 있다는 것 ( 변수에 할당이 가능, 인자로 사용, 리턴 타입으로 사용~ )
+
+javascript에선 number라는 것 하나로만 사용해서 숫자를 사용하면됨 / 심지어 number로 안하고 let a= 12; 이런식으로 할당해버리면됨!
+-> number만 쓰면 모든 숫자 다 포함해서 사용할 수 있다라는 의미
+
+number - infinity ( 무한대 )
+number - negative infinity( 음의 무한대 )
+nAn -> string에 나누기 2 이런식으로 했을 때 나오는 값 ( not a number )
+
+항상 연산할때 그 값이 valid한지 확인 잘해야함!
+
+최근 자바스크립트에서 추가된 내용인데, 숫자뒤에n붙이면 bigInt라는 number type이 추가되어짐 ( 엄청 큰 숫자 할당 가능 )
+
+javascript는 한가지의 글자든 긴 글자든 string변수임
+
+template literals ( string )
+	cont brendan = 'brendan';
+	const hello = 'hi ${brendan!'; 이런식으로 하면 변수값을 이어서 사용가능 이를 template literals라고 함
+
+
+null => 개발자가 null이라고 지정하는것 / 넌 아무것도 아니야 이렇게
+undefined => 값을 선언은 했지만, 아무런 값도 안넣었을 경우!
+
+symbol	=> 동시에 다발적으로 사용되어지는 코드에서 우선순위를 주고 싶을때 사용하는 변수 / 동일한 string을 작성했어도 다른 symbol로 인식되어짐
+	symbol은 출력하고 싶으면 {symbol.description} 이렇게해야 출력할 수 있음! 
+
+Dynamic typing : dynamically typed language  // 선언할때 어떤 타입인지 선언하지 않고 프로그램이 동작할때 할당된 값에 따라서 타입이 변경될 수 있는 것.
+	-> 빠르게 프로토타입할땐 유용하게 사용되어질 수 있지만, 다수의 엔지니어들이 사용하게되어질떄는 발들에 불이 떨어질 수 있음.
+
+let text = 'hello'; --> type이 string
+text=1;	--> type이 number가 되어버림
+text='7'+5; --> type이 string이 되어버림
+text='8'/'2'; --> type이 number가 되어버림
+
+
+let text='hello';
+console/log(text.charAt(0)); --> h 출력!
+
+
+이러한 스크립트 타입 문제 때문에 type script라는 javasciprt위에 type을 얹은 언어가 생겨짐!

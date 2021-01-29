@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Apply JavaScript example</title>
+</head>
+
+<body>
+    <button>Click me</button>
+
+    <div class="output">
+
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+        <p></p>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        var list = document.querySelector('.output ul');
+        var totalBox = document.querySelector('.output p');
+        var total = 0;
+        list.innerHTML = '';
+        totalBox.textContent = '';
+        // number 1
+        let product = [
+            'Underpants:6.99',
+            'Socks:5.99',
+            'T-shirt:14.99',
+            'Trousers:31.99',
+            'Shoes:23.99'
+        ];
+        for (var i = 0; i < product.length; i++) { // number 2
+            // number 3
+            let name = product[i].split(':');
+            name[1] = Number(name[1]);
+            console.log(name[0]);
+            total = total + name[1];
+            itemText = name[0] + ' — $' + name[1];
+            // number 4
+
+            // number 5
+
+            var listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            list.appendChild(listItem);
+        }
+
+        totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+
+        var list = document.querySelector('.output ul');
+        var searchInput = document.querySelector('.output input');
+        var searchBtn = document.querySelector('.output button');
+
+        list.innerHTML = '';
+
+        var myHistory = [];
+
+        searchBtn.onclick = function () {
+            // we will only allow a term to be entered if the search input isn't empty
+            if (searchInput.value !== '') {
+                // number 1
+                myHistory.push(searchInput.value);
+                // empty the list so that we don't display duplicate entries
+                // the display is regenerated every time a search term is entered.
+                list.innerHTML = '';
+
+                // loop through the array, and display all the search terms in the list
+                for (var i = 0; i < myHistory.length; i++) {
+                    itemText = myHistory[i];
+                    var listItem = document.createElement('li');
+                    listItem.textContent = itemText;
+                    list.appendChild(listItem);
+                }
+
+                // If the array length is 5 or more, remove the oldest search term
+                if (myHistory.length >= 5) {
+                    // number 2
+                    myHistory.pop();
+                }
+
+                // empty the search input and focus it, ready for the next term to be entered
+                searchInput.value = '';
+                searchInput.focus();
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

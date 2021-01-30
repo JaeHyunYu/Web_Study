@@ -1,0 +1,34 @@
+function(함수)정의할때 한가지 일만 하도록 작성하는 것이 맞음!
+function이름을 정의할땐 보통 동사형으로 하는 거가 맞음!
+javascript에선 function은 object임 즉 javascript에선 함수를 변수에 선언할 수도 있고 parameter로 넘길수도 있고 그럼!
+
+default parameters(added in ES6)
+사용자가 파라미터를 안넘겨주고 함수를 실행했을때, 파라미터가 대체되어서 사용되는 것!
+
+rest parameters
+파라미터로 ...를 전달하게되면 배열을 넘기는 것으로 생각하면됨!
+
+early return 
+-> 특정조건문에서 빨리 함수를 종료할 수 있으면 바로 return 밖아버리는 것이 더 효율적임! 이런 것을 early return 이라고 함!
+
+arrow function 함수 표현법 중 하나로 생각하면 될 거 같음!
+	표현하기 더 쉬움!
+	ex) 
+	const add = (a,b) => a+b;
+	이런식으로 표현하는거가 arrow function!
+
+
+IIFE : Immediately invoked function expression
+함수선언함과 동시에 함수 실행하고 싶을 때 쓰는 방식! 
+
+function hello(){
+	console.log('hello');
+}
+
+이함수를
+
+괄호로묵고 뒤에 ();붙이면 선언과 동시에 실행됨 
+	-> ex	
+		(function hello(){
+			console.log('hello');	
+		})();

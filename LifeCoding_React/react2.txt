@@ -1,0 +1,19 @@
+public이라는 디렉터리는 create-react-app에서
+npm run start했을때 찾는 디렉터리임
+
+react는 나중에 코드가 엄청 커졌을때 그 코드가 한개의 태그?만으로 줄여서 내가 그 의미를 한번에 확인할 수 있으면 얼마나좋을까? 해서 만들어진것!! 이라고 생각하면됨!
+
+
+react는 javascript랑은 달리 태그를 그냥 바로 써버림!
+
+react는 jsx라고 기존의 javascript는 태그 쓰려면'이런거로 잘묶어줘야하는데 이같은 거 간단하게 하기 위해 만든것!
+
+현재 실습에선 create-react-app가 우리가 작성한 코드를 javascript로 알아서 잘 컨버팅 해줘서 표현해주는 것이라 이해하면됨
+
+React의 Component는 일단은 정리정돈의 의미로 알고있으면 됨!
+
+기존의 html코드는 태그의 동일성과 attribute(속성)의 차이를 통해 다방면으로 활용되어질 수 있음
+
+이와같이 React에서 Component를 활용하기 위해 props를 사용하는 것! {this.props.???}
+
+export default ??? -> 이 코드를 추가함으로써 외부에서 해당 js(componets가 들어있는)를 사용하게 될 수 있다!

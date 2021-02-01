@@ -16,4 +16,4 @@ static -> static변수는 class자체에 붙어있는애라서 밖에서 사용�
 extends! 쓰면됨
 
 
-// java개념들이 javascript에 많이 추가되어진듯..
+// java개념들이 javascript에 많이 추가되어진듯..!

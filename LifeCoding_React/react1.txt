@@ -1,0 +1,15 @@
+production모드를 빌드할려면
+npm run start가 아니라
+npm run build로 실행해야함!
+
+
+-> 이렇게 실행하게 되면 실제 production환경에서 실행되는 앱을 만들기 위해서 공백과 같은 것을 싹다 줄여버려서 용량이 줄어들게됨 ( 여러 앱들이 다 용량 알아서 줄여준다고함! )
+
+
+결론적으로 실제 서비스하려면 빌드안에 있는 파일을 실행시키면된다! 웹접속했을때 처음으로 접속하는 웹(apache2같은 경우는 /var/www/html/index.html같은 친구)을 build 디렉터리 안에 있는 파일들을 위치시키면 된다고함!
+
+서버 실행
+npm install -g serve
+	npm을 통해 설치할 수 있는 간단한 서버
+
+npm serve -s build -> build라는 디렉터리를 root 디렉터리로 하겠다! 라는 의미

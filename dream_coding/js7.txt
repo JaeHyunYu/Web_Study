@@ -1,0 +1,78 @@
+object는 key와 value의 집합이다!
+object를 안쓰고 그냥 변수만을 이용하게 되면 -> 넘겨줘야하는 인자가 많아질경우 너무 복잡해짐
+
+object꼴
+	const a = { name='yjh', age:24};
+이런꼴임!
+
+object만드는 방식은 2가지!
+	const obj={};			// object literal 방식
+	const obj2= enw Object();		// object constructor 방식
+
+javascript에선 object를 정의했음에도 object에 추가할 수도 있음!
+	a.hasJob=true;		-> 이런식으로 추가해줄 수 있음!
+		--> 다만 이런식으로 동적으로 짜면 나중에 유지보수도 힘들고, 어떤 에러가 발생하지 모르니 이렇게 쓰는 걸 권장하지 않음
+	심지어 뺼 수도 있음!
+	delete a.hasJob		-> 이런식으로!	
+
+
+object의 computed properties!
+object의 안에 데이터를 접근할때 우린 보통 .을 이용(a.name 이렇게!)하여 접근함
+근데 이렇게 말고 다른방식으로도 접근할 수 있음 (a['name'] 이렇게!) 이걸 computed properties라고함! -> property는 항상 string형식(''이거 써서)으로 지정해서 받아와야함!
+
+우리가 . 이라는 걸 쓰는 건 코딩을할때 안에 데이터를 받아올때 주로 사용
+computed properties를 쓰는건 원하는 키의 값을 받아오고싶다, 런타임에서 결정할때 사용한다고함.. (사용자가 막 key에 관한 value를 결정한다거나 그럴때!)
+	=> 얘를 들어서
+		function printValue(obj, key){
+			console.log(obj[key]);
+		}
+		이런식으로 할때 사용함!! 	-> 이럴땐 .으로 접근해서 출력하는게 안되니까!! 
+
+Property value shorthand
+	const person1={name='bob', age:2};
+	const person2={name='bb',age:3};
+	이렇게하면 너무 번거로움!
+
+	function makePerson(name,age){
+		return {
+			name,		//name: name,
+			age,};		// age:age,		//자바스크립트에선 키와 value에 이름이 동일하면 생략해도되서 저렇게 써도됨! 이를 property value shorthand라고함!!
+		}
+
+	-> 이건 옛날방식
+
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}	-> 이게 최근방식 (Constructor Function 이라고함! )
+		-> const person = new Person('bob',13);
+	이렇게 하는걸 이렇게 한다고함!
+
+in operator ( 해당하는 obj안에 키가 있는지 없는지 확인하는 거!)
+	-> console.log('name' in a); 이런식으로! 이러면 true가 나옴!
+
+for..in vs for..of
+	for(key in obj){
+		console.log(key);
+	}
+		=> 이런 식으로 하면 obj안에 key들을 받아와서 출력하게됨!
+	for(val of array){
+		console.log(val);
+	}
+		=> 배열같은 순차적으로 데이터가 담겨있는 애들을 찍을때 가져오는 방식임!
+
+cloning
+const user = { name : 'carl', age:'20'};
+const user2 = user;
+		-> 메모리엔 user의 ref가 들어가게되고 user2도 동일한 ref를 가리키게되는거!
+이런식으로 말고 그냥 진짜 값을 복사하고싶다! 하면
+for문써서 안에 값들을 새로운 object에 넣는 방식으로 하였지만,
+Object.assign(user3,user) 이런식으로 하면 됨! 이렇게 해도 되고, const user3= Object.assign({},user); 이렇게 해도 됨!
+	     (target, source)
+	=> 배열도 전달할 수 있음!
+
+assign another example
+
+const fruit1 = {color:'red'};
+const fruit2 = {color:'blue', size:'big'};
+const mixed = Object.assign({},fruit1,fruit2);	=> 이경우엔 mixed에 color:'blue', size:'big'이 할당되어짐! -> 뒤에 나오는 애들이 점차 덮어씌워짐!

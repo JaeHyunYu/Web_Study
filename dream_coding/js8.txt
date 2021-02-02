@@ -1,0 +1,42 @@
+배열선언
+	const arr = new Array();
+	const arr2 = [1,2]; 
+	이런식으로 2가지 방법으로 선언할 수 있음
+
+배열 출력!
+	for loop사용해서 길이만큼해서 출력하는거~
+	for of 방법!
+		for(let fruit of arr){
+			console.log(fruit);
+		]
+	forEach방법!
+		fruits.forEach(function(fruit,index,array){
+			console.log(fruit,index,array);
+		});
+		-> 보통 이 api가 선언된 선언문을 확인해보세용! (ctrl하고 클릭하면 api선언된곳으로 이동해서 설명을 볼 수 있음!)
+		-> 위에 선언한 이름 없는 함수는 그냥 => 이렇게 해서 선언도 가능 
+		이렇게!
+		fruits.forEach((fruit,index,array)=>{
+			console.log(fruit,index,array);
+		});	
+
+배열 마지막에 넣는것은 push, 뒤에 마지막을 빼는것을 pop!
+앞에서 데이터를 넣는것은 unshift! 앞에있는 거 빼는건 shift!	
+
+중요정보!! shift와 unshift는 pop과 push보다 매우 느림!
+	-> 앞에서 데이터를 넣으려면 데이터들을 뒤로 옮긴다음에 넣는 것이기 때문에 더 느림!!
+
+배열을 지정된 곳에 있는 걸 삭제하는 방법! splice!!
+	ex) arr.splice(2,5);	=> 2번째 인덱스부터 5개 삭제한다는 뜼!
+			=> 두번째 인자 말안하면 첫번째 인자부터 싹다 사라짐!
+	arr.splice(2,5,3,4);
+			=> 2번쨰부터 5개 날라가고 그 자리에 3이랑 4 인자가 차근차근(2개)들어간다는 뜻!
+
+두가지 배열 합치는 방법!
+	arr.concat(arr2)	=> 하면 return으로 합쳐진 배열을 줌
+배열검색API
+	arr.indexOf('찾고싶은값'); 하면 찾고 싶은 값의 첫번째 인덱스 찾을 수 있음! / 찾고싶은값이 없으면 -1이뜸!
+	arr.includes('찾고싶은값'); 있으면 true, 없으면 false
+
+lastIndexOf => 똑같은 값이 여러개 있을경우 arr.lastindexOf('찾고싶은값'); 찾고싶은 값의 마지막 인덱스값 출력!
+	

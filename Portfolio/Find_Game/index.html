@@ -11,62 +11,61 @@
 </head>
 
 <body>
-
-    <br>
-    <br>
-    <br>
-    <div class="con">
-        <div class="cursor"></div>
-        <img class="bac" id="bac" src="cursor.png"">
-        <br>
-        <br>
-        <br>
-        <br>
-        <img class=" bac2" id="bac" src="bak.png"">
-
+    <h1>Catch Image!</h1>
+    <h2>Count:<span class="na"> 0</span></h2>
+    <div class="area">
+        <div class="con">
+            <div class="cursor"></div>
+            <img class="bac" id="bac" src="cursor.png">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img class=" bac2" id="bac" src="bak.png">
+        </div>
     </div>
-<p>잡은 숫자</p>
-    <p class=" na">0</p>
 
 
-        <script>
-            let mouseCursor = document.querySelector(" .cursor"); let section = document.querySelector(".con");
-            section.addEventListener("mouseover", cursor); section.addEventListener("mousemove", cursor); function
-                cursor(e) { mouseCursor.style.left = e.pageX + "px"; mouseCursor.style.top = e.pageY - scrollY + "px"; }
-        </script>
-
-        <script>
-            let bac = document.querySelector(".bac");
-            let bac2 = document.querySelector(".bac2");
-            let num = document.querySelector(".na");
-            let catch_num = 1;
-            bac.addEventListener("mouseover", go);
-            bac.addEventListener("mousemove", go);
-            bac.addEventListener("click", catch2);
 
 
-            bac2.addEventListener("mouseover", go2);
-            bac2.addEventListener("mousemove", go2);
-            bac2.addEventListener("click", catch3);
-            function go(e) {
-                console.log('save me..');
-                bac.style.opacity = 1;
-            }
-            function go2(e) {
-                console.log('save me..');
-                bac2.style.opacity = 1;
-            }
-            function catch2(e) {
-                bac.style.display = "none";
-                num.textContent = catch_num;
-                catch_num++;
-            }
-            function catch3(e) {
-                bac2.style.display = "none";
-                num.textContent = catch_num;
-                catch_num++;
-            }
-        </script>
+    <script>
+        let mouseCursor = document.querySelector(" .cursor"); let section = document.querySelector(".con");
+        section.addEventListener("mouseover", cursor); section.addEventListener("mousemove", cursor); function
+            cursor(e) { mouseCursor.style.left = e.pageX + "px"; mouseCursor.style.top = e.pageY - scrollY + "px"; }
+    </script>
+
+    <script>
+        let bac = document.querySelector(".bac");
+        let bac2 = document.querySelector(".bac2");
+        let num = document.querySelector(".na");
+        let catch_num = 1;
+        bac.addEventListener("mouseover", go);
+        bac.addEventListener("mousemove", go);
+        bac.addEventListener("click", catch2);
+
+
+        bac2.addEventListener("mouseover", go2);
+        bac2.addEventListener("mousemove", go2);
+        bac2.addEventListener("click", catch3);
+        function go(e) {
+            console.log('save me..');
+            bac.style.opacity = 1;
+        }
+        function go2(e) {
+            console.log('save me..');
+            bac2.style.opacity = 1;
+        }
+        function catch2(e) {
+            bac.style.display = "none";
+            num.textContent = catch_num;
+            catch_num++;
+        }
+        function catch3(e) {
+            bac2.style.display = "none";
+            num.textContent = catch_num;
+            catch_num++;
+        }
+    </script>
 
 
 </body>

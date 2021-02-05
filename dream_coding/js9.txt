@@ -1,0 +1,51 @@
+배열내용을 string으로 return~
+	arr.join(','); // 구분자를 넣어서 문자열로 만들어주는거! / 구분자 않넣어도 괜춘! 구분자 않넣으면 기본값이 ,임!
+
+string을 배열로 return
+	string.split('구분자'); / string,split('구분자','갯수); 해서 개수를 정해서 조금만 넣을 수도 있음!
+배열 reverse!반대로!
+	arr.reverse(); 이렇게 하면됨! // 배열자체를 reverse로 바꿔버림!
+
+배열 앞에두개만 지울거야!
+	arr.splice(0,2); // 인덱스0부터 2개를 지울거야! 라는 뜻 // 없어지는 index를 리턴!
+	arr.slice(2,5); // 배열의 특정한 부분을 리턴해줌! // 인덱스2부터 인텍스4까지 리턴해줌! 
+
+
+클래스함수에서 특정부분의 조건을 줄경우 ( 예를들어서 학생클래스중 90점인 친구 찾기!)
+	const result = arr.find(function(student,index){
+			return student.score === 90;				
+		});
+	=> find api는 첫번째거 확인하고 난 뒤에, 함수를 바로 종료시켜줌 ( 리턴하고 바로! )
+학생들중에서 true를 갖고있는애만 리턴할경우!
+	consult result = arr.filter((student) => student.enrolled);
+		==> 방금은 call back function처럼(방금위처럼) 사용한건데, 넘겨주는 인자값이 한개이게되면 위에처럼 arrow function으로 코드를 간편하게 할 수 있음(return도 안쓰고 안묶어줘도 됨!)
+
+학생들 점수만 리턴!
+	const result = arr.map((student)=>student.score);
+		지정된 call back함수를 호출하면서 함수를 거쳐서 배열 내용을 새로운 값으로 변환해주는 역할은 한다고함?!
+		배열안에 있는 내용을 우리가 가공해서 새로운 데이터를 만들때 map이라는 api가 매우 유용!		
+
+점수가 50점보다 낮은 학생들이 있는지 확인해라!
+	const result = arr.some((student) => student.score<50);
+		배열에 요소 중에서 콜백함수의 내용인 친구가 있다면 리턴 true 해줌!
+		즉, 배열에 어떤 특정 값의 조건이 있는지 판단할때 사용!
+	const result = arr.some((student) => student.score>=50);
+		배열의 요소들이 모두 콜백함수의 조건들이 맞게되면 true리턴!
+		=> 해당 과정은 반대로 확인하는거라 false가 맞게되는 경우!
+
+학생들의 평균점수를 가져오시오!
+	const result = arr.reduce((prev,curr)=>
+		{
+			return prev + curr.score;
+		},0);	// 여기서 0은 initial값으로 0을 준거임!
+	const result=result/5;
+		우리가 원하는 시작점부터 모든 배열을 돌면서 어떤 값을 누적할때 쓰는함수!
+		콜백함수에서 리턴할때 누적된 값을 리턴!
+	// reduecRight은 배열 뒤에서 돌릴때 쓰는 함수! // 내용은 똑같음! 뒤에서부터 돌뿐임!
+
+학생들의 모든점수를 스트링으로 변환!
+	const result = arr.map(student=>student.score).goin(,);
+
+학생들 점수를 배열! ( 작은거부터! )
+	const result = arr.map((student)=>student.score).sort((a,b)=>a-b).join;
+	sort함수는 두개의 인자를 넘겨받는데 조건이 +이면 순서 바꾸고 아니면 그대로!

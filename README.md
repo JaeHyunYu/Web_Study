@@ -9,3 +9,9 @@
 2021.02.01  JavaScript building blocks - Function return values
 
 2021.02.02  CSS FlexBox!!
+
+2021.02.03  Responsive Nav bar!
+
+2021.02.04  Youtube CloneCoding Start!
+
+2021.02.05  Study Several JavaScript Array Api!

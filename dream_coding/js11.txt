@@ -1,0 +1,16 @@
+callback
+
+synchronous // javascript는 동기적인 친구! // hoisting이후부터 코드들이 나타나는 순서부터 실행이 된다!
+
+asynchronous // 언제 코드들이 실행될지 모르는! 비동기적인 친구!
+
+synchronous callback
+	자바스크립트에서 함수의 선언은 호이스팅이 되어짐!
+	그래서 순서대로 실행이 되어지는 콜백함수~~
+
+asynchronous callback
+	특정 시간뒤에 뭐 실행하게 한다거나~ 그런 콜백함수를 사용할 수 있다~
+
+
+콜백지옥의 문제점
+	-> 가독성이 개판임 / business logic을 이해하기도 너무 힘듦

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0f457f0400.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <div class="intro">
+        <div class="introbox">
+            <!-- <img class="introimg" src="computer.jpg">-->
+            <div class="introimg"></div>
+        </div>
+
+    </div>
+
+
+    <div class="year">
+        <div class="showimage">
+            <div class="pbox1">
+                <img class="pimg" src="computer.jpg">
+            </div>
+            <div class="pbox2">
+                <img class="pimg" src="computer.jpg">
+            </div>
+            <div class="pbox3">
+                <img class="pimg" src="computer.jpg">
+            </div>
+            <div class="pbox4">
+                <img class="pimg" src="computer.jpg">
+            </div>
+            <div class="pbox5">
+                <img class="pimg" src="computer.jpg">
+            </div>
+            <div class="pbox6">
+                <img class="pimg" src="computer.jpg">
+            </div>
+        </div>
+        <div class="tri">
+            <div class="tri1">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+            <div class="tri2">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+            <div class="tri3">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+            <div class="tri4">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+            <div class="tri5">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+            <div class="tri6">
+                <i class="fas fa-angle-double-down ar"></i>
+            </div>
+
+        </div>
+        <div class="year1">
+            <div class="id1"></div>
+            <div class="id2"></div>
+            <div class="id3"></div>
+            <div class="id4"></div>
+            <div class="id5"></div>
+            <div class="id6"></div>
+        </div>
+        <div class="year2">
+            <div class="yeara">2019</div>
+            <div class="yearb">2020</div>
+            <div class="yearc">2021</div>
+            <div class="yearc">2022</div>
+            <div class="yearc">2023</div>
+            <div class="yearc">2024</div>
+        </div>
+    </div>
+
+    <script>
+
+        let a = document.querySelector(".id1");
+        let b = document.querySelector(".id2");
+        let c = document.querySelector(".id3");
+        let ia = document.querySelector(".pbox1");
+        let ib = document.querySelector(".pbox2");
+        let ic = document.querySelector(".pbox3");
+
+        a.addEventListener("mousemove", function () {
+            ia.style.visibility = "visible";
+        });
+        a.addEventListener("mouseleave", function () {
+            ia.style.visibility = "hidden";
+        })
+
+        b.addEventListener("mousemove", function () {
+            ib.style.visibility = "visible";
+        });
+        b.addEventListener("mouseleave", function () {
+            ib.style.visibility = "hidden";
+        })
+
+        c.addEventListener("mousemove", function () {
+            ic.style.visibility = "visible";
+        });
+        c.addEventListener("mouseleave", function () {
+            ic.style.visibility = "hidden";
+        })
+
+    </script>
+</body>
+
+</html>

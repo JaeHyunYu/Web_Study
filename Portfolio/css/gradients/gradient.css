@@ -1,0 +1,9 @@
+body{
+    height: 100%;
+    background:rgb(70,184,167);
+    background: radial-gradient(
+        circle,
+        rgba(70,184,167,1) 0%,
+        rgba(55,80,219,1) 100%
+    );
+}

@@ -1,0 +1,58 @@
+@keyframes blink{
+    0%{
+        background-color: violet;
+    }
+    20%{
+        background-color:blue;
+    }
+    40%{
+        background-color: yellow;
+    }
+    50%{
+        background-color: red;
+    }
+    70%{
+        background-color: antiquewhite;
+    }
+    80%{
+        background-color: aqua;
+    }
+    100%{
+        background-color: orange;
+    }
+
+}
+
+
+@-webkit-keyframes blink{
+    0%{
+        background-color: violet;
+    }
+    20%{
+        background-color:blue;
+    }
+    40%{
+        background-color: yellow;
+    }
+    50%{
+        background-color: red;
+    }
+    70%{
+        background-color: antiquewhite;
+    }
+    80%{
+        background-color: aqua;
+    }
+    100%{
+        background-color: orange;
+    }
+
+}
+
+div {
+    height: 400px;
+    width: 300px;
+    border: 1px solid black;
+    animation:blink 10s infinite;
+    -webkit-animation: blink 10s infinite ;
+}

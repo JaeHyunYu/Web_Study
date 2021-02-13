@@ -1,0 +1,132 @@
+body{
+width:100vw;
+height: 100vh;
+margin: 0px;
+background-color:#f1f1f2;
+display: flex;
+flex-direction: column;
+}
+
+.intro{
+    margin-top:50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100vw;
+    
+}
+.introbox{
+    display: flex; 
+    flex-direction: column;
+    border: solid;
+    border-color: #a1d6e2;
+    border-radius: 20px;
+    background-color: #a1d6e2;
+    width: 500px;
+    height: 300px;
+}
+.introimg{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: #f1f1f2;
+}
+
+
+.year{
+  position:absolute;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    margin-top: 60vh;
+}
+
+.showimage{
+    visibility: hidden;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.tri{
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    
+}
+
+
+
+.pimg{
+    height: 10vw;
+    width: 16vw;    
+    border: solid;
+    border-color: #a1d6e2;
+    border-radius: 20px;
+    background-color: #a1d6e2;
+}
+
+.year1{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+}
+
+.id1{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+}
+.id2{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+
+}
+.id3{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+}
+.id4{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+}
+.id5{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+}
+.id6{
+    height: 15px;
+    flex-grow: 1;
+    background-color: #1995ad;
+}
+.id1:hover{
+    background-color: black;
+}
+.id2:hover{
+    background-color: black;
+}
+.id3:hover{
+    background-color: black;
+}
+.ar{
+    color: #1995ad;
+}
+.year2{
+color:#bcbabe;    
+    display: flex;
+    width:100vw;
+    text-align: center;
+    justify-content: space-evenly;
+    align-content: center;
+}

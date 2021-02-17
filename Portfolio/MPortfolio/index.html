@@ -8,60 +8,80 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0f457f0400.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
-
-
     <div class="intro">
         <div class="introbox">
             <!-- <img class="introimg" src="computer.jpg">-->
-            <div class="introimg"></div>
+            <div class="introcircle"></div>
+            <img class="introimg" src="computer.jpg">
         </div>
-
     </div>
-
-
     <div class="year">
         <div class="showimage">
             <div class="pbox1">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo1.JPG">
+                <p class="pdate">2017.10</p>
             </div>
             <div class="pbox2">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo2.JPG">
+                <p class="pdate">2018.12</p>
             </div>
             <div class="pbox3">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo3.jpg">
+                <p class="pdate">2019.06~2019.10</p>
             </div>
             <div class="pbox4">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo4.JPG">
+                <p class="pdate">2019.06~2019.12</p>
             </div>
             <div class="pbox5">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo5.JPG">
+                <p class="pdate">2019.09</p>
             </div>
             <div class="pbox6">
-                <img class="pimg" src="computer.jpg">
+                <img class="pimg" src="photo6.JPG">
+                <p class="pdate">2019.12</p>
+            </div>
+            <div class="pbox7">
+                <img class="pimg" src="photo7.JPG">
+                <p class="pdate">2020.07~2020.08</p>
+            </div>
+            <div class="pbox8">
+                <img class="pimg" src="photo8.JPG">
+                <p class="pdate">2020.07~2020.12</p>
+            </div>
+            <div class="pbox9">
+                <img class="pimg" src="photo9.JPG">
+                <p class="pdate">2020.09~2020.12</p>
+            </div>
+            <div class="pbox10">
+                <img class="pimg" src="photo10.JPG">
+                <p class="pdate">2020.09~2020.12</p>
             </div>
         </div>
         <div class="tri">
             <div class="tri1">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-down ar ar1"></i>
             </div>
             <div class="tri2">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-down ar ar2"></i>
             </div>
             <div class="tri3">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-double-down ar ar3"></i>
             </div>
             <div class="tri4">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-down ar ar4"></i>
             </div>
             <div class="tri5">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-down ar ar5"></i>
             </div>
             <div class="tri6">
-                <i class="fas fa-angle-double-down ar"></i>
+                <i class="fas fa-angle-double-down ar ar6"></i>
+            </div>
+            <div class="tri7">
+                <i class="fas fa-angle-double-down ar ar7"></i>
             </div>
 
         </div>
@@ -69,49 +89,36 @@
             <div class="id1"></div>
             <div class="id2"></div>
             <div class="id3"></div>
-            <div class="id4"></div>
             <div class="id5"></div>
             <div class="id6"></div>
+            <div class="id8"></div>
+            <div class="id10"></div>
+        </div>
+        <div class="year3">
+            <div class="id4"></div>
+            <div class="id7"></div>
+            <div class="id9"></div>
         </div>
         <div class="year2">
-            <div class="yeara">2019</div>
-            <div class="yearb">2020</div>
+            <div class="yeara">2018</div>
+            <div class="yearb">2019</div>
+            <div class="yearc">2020</div>
             <div class="yearc">2021</div>
             <div class="yearc">2022</div>
             <div class="yearc">2023</div>
-            <div class="yearc">2024</div>
         </div>
     </div>
 
     <script>
+        let img = document.querySelector('.introimg');
+        for (i = 1; i < 11; i++) {
+            eval("var id" + i + "=document.querySelector('.id" + i + "')");
+            eval("var pb" + i + "=document.querySelector('.pbox" + i + "')");
+            console.log("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundcolor='black'})");
+            eval("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundColor='black';img.src = 'photo" + i + ".JPG';})");
+            eval("id" + i + ".addEventListener('mouseleave', function () {pb" + i + ".style.visibility = 'hidden'; id" + i + ".style.backgroundColor='#1995ad'})");
 
-        let a = document.querySelector(".id1");
-        let b = document.querySelector(".id2");
-        let c = document.querySelector(".id3");
-        let ia = document.querySelector(".pbox1");
-        let ib = document.querySelector(".pbox2");
-        let ic = document.querySelector(".pbox3");
-
-        a.addEventListener("mousemove", function () {
-            ia.style.visibility = "visible";
-        });
-        a.addEventListener("mouseleave", function () {
-            ia.style.visibility = "hidden";
-        })
-
-        b.addEventListener("mousemove", function () {
-            ib.style.visibility = "visible";
-        });
-        b.addEventListener("mouseleave", function () {
-            ib.style.visibility = "hidden";
-        })
-
-        c.addEventListener("mousemove", function () {
-            ic.style.visibility = "visible";
-        });
-        c.addEventListener("mouseleave", function () {
-            ic.style.visibility = "hidden";
-        })
+        }
 
     </script>
 </body>

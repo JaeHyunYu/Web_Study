@@ -2,7 +2,7 @@ body #bg{
     height: 100%;
     width: 100%;
     background-color: rgb(2,211,248);
-    clip-path: polygon(50% 0%, 100% 0, 100% 73%, 18% 100%, 0 30%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 0, 100% 100%, 25% 100%, 0 66%);
     position:absolute;
     z-index:-1;
 }

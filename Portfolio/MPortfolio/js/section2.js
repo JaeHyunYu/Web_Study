@@ -1,9 +1,9 @@
 let img = document.querySelector('.introimg');
 for (i = 1; i < 11; i++) {
-    eval("var id" + i + "=document.querySelector('.id" + i + "')");
+    eval("var durationbox_box" + i + "=document.querySelector('.durationbox_box" + i + "')");
     eval("var pb" + i + "=document.querySelector('.pbox" + i + "')");
-    console.log("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundcolor='black'; id" + i + ".style.zIndex=6;})");
-    eval("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundColor='#1995ad'; id" + i + ".style.zIndex=6;})");
-    eval("id" + i + ".addEventListener('mouseleave', function () {pb" + i + ".style.visibility = 'hidden'; id" + i + ".style.backgroundColor='#a1d6e2';id" + i + ".style.zIndex=5;})");
+    console.log("durationbox_box" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; durationbox_box" + i + ".style.backgroundcolor='black'; durationbox_box" + i + ".style.zIndex=6;})");
+    eval("durationbox_box" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; durationbox_box" + i + ".style.backgroundColor='#1995ad'; durationbox_box" + i + ".style.zIndex=6;})");
+    eval("durationbox_box" + i + ".addEventListener('mouseleave', function () {pb" + i + ".style.visibility = 'hidden'; durationbox_box" + i + ".style.backgroundColor='#a1d6e2';durationbox_box" + i + ".style.zIndex=5;})");
 
 }

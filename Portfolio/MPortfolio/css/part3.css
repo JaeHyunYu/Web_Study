@@ -10,89 +10,62 @@
 
 
 
-.container {
+.part3_container {
     margin-top: 100px;
-      align-self: center;
-      height: 300px;
-      width: 600px;
-      top: 60px;
-      display: flex;
-    }
+    align-self: center;
+    height: 300px;
+    width: 800px;
+    top: 60px;
+    display: flex;
+}
     
-    .card {
-      display: flex;
-      height: 280px;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: -1rem 0 3rem #000;
-    margin-left: -50px;
-      transition: 0.4s ease-out;
-      position: relative;
-      align-content: center;
-      left: 0px;
-    }
+.card {
+    display: flex;
+    height: 280px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 3px 0 9px #000;
+    margin-left: -20px;
+    transition: 0.4s ease-out;
+    position: relative;
+    align-content: center;
+    left: 0px;
+}
     
-    .card:not(:first-child) {
-        margin-left: -20px;
-    }
+.card:not(:first-child) {
+    margin-left: 10px;
+}
     
-    .card:hover {
-      transform: translateY(-20px);
-      transition: 0.4s ease-out;
-      height: 400px;
-      width:600px;
-    }
+.card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+    height: 400px;
+    width:600px;
+}
     
-    .card:hover ~ .card {
-      position: relative;
-      left: 50px;
-      transition: 0.4s ease-out;
-    }
-    .card:hover{
-      background-color: gray;
-      z-index: 1;
-    }
+.card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+.card:hover{
+    background-color: gray;
+    z-index: 1;
+}
     
-    .title {
-      color: white;
-      font-weight: 300;
-      position: absolute;
-      left: 20px;
-      top: 15px;
-    }
+.card_title {
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
     
-    .card_image{
-      position: absolute;
-      top: 170px;
-      left: calc(50% - 40px);
-  
-      width: 80px;
-      height: 80px;
-      border-radius: 100%;
-    }
-  
-    .circle {
-      position: absolute;
-      top: 150px;
-      left: calc(50% - 60px);
-    }
-    
-    .stroke {
-      stroke: white;
-      stroke-dasharray: 360;
-      stroke-dashoffset: 360;
-      transition: 0.6s ease-out;
-    }
-    
-    svg {
-      fill: white;
-      stroke-width: 2px;
-    }
-    
-    .card:hover .stroke {
-      stroke-dashoffset: 100;
-      transition: 0.6s ease-out;
-    }
-
-    
-    
+.card_image{
+    position: absolute;
+    top: 170px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}

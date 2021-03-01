@@ -153,18 +153,7 @@ body{
     z-index:-4;
 }
 
-.bg2{
-    margin:0px;
-    height: 100%;
-    width: 100%;
-    background-image: url(toronto.jpg);
-    background-color: #bcbabe;
-    background-blend-mode: screen;
-    clip-path: polygon(21% 0, 100% 0, 100% 80%, 93% 100%, 5% 100%, 0 80%, 0 12%);
-    position:absolute;
-    z-index: -1;
- 
-}
+
 
 
 

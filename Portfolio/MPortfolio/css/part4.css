@@ -5,75 +5,54 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  
-  .skills{
+}  
+.part4_box{
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
     align-items:center;
     width: 70vw;
     height: 30vw;
     backdrop-filter: blur(10px);
     align-self: center;
-    position: relative;
-    transition:1s;
-  
-  }
-
-
-
-  
-.section2{
-    width:100%;
-    height: 100%;
     overflow:hidden;
-    position:relative;
+}
+.part4_container{
+    width:400%;
+    height: 100%;
     display: flex;
-  }
+    transition:1s;
+}
 
 
-  .section2 .bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
-  .section2 input{display: none;}
+.part4_box .bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
+.part4_box input{display: none;}
   /* 슬라이드 조작 */
-  #pos1:checked ~ .section2{margin-left:0;}
-  #pos2:checked ~ .section2{margin-left:-100%;}
-  #pos3:checked ~ .section2{margin-left:-200%;}
-  #pos4:checked ~ .section2{margin-left:-300%;}
+#pos1:checked ~ .part4_container{margin-left:300%;}
+#pos2:checked ~ .part4_container{margin-left:100%;}
+#pos3:checked ~ .part4_container{margin-left:-100%;}
+#pos4:checked ~ .part4_container{margin-left:-300%;}
   /* bullet 조작 */
-  #pos1:checked ~ .bullet label:nth-child(1),
-  #pos2:checked ~ .bullet label:nth-child(2),
-  #pos3:checked ~ .bullet label:nth-child(3),
-  #pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+#pos1:checked ~ .bullet label:nth-child(1),
+#pos2:checked ~ .bullet label:nth-child(2),
+#pos3:checked ~ .bullet label:nth-child(3),
+#pos4:checked ~ .bullet label:nth-child(4){background:#666;}
   
-  .space{
+.space{
     width:100%;
     height: 100%;
-  }
-  
-  
-  
-  
-  
-  .emptybar{
-  width: 16%;
-  height: 5%;
-  background-color: #EEE;
-  border-radius: 15px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #FFF;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.emptybar{
+    width: 70%;
+    height: 30px;
+    background-color: #EEE;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}

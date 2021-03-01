@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bubble.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,9 +16,26 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <script defer src="js/section2.js"></script>
+    <link rel="stylesheet" href="css/part1.css">
+    <link rel="stylesheet" href="css/part2.css">
+
+    <link rel="stylesheet" href="css/part3.css">
+    <link rel="stylesheet" href="css/part4.css">
+
 </head>
 
 <body>
+
+    <div class="bubbles">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+        <img class="bubble" src="css/bubble.png">
+    </div>
 
 
     <div class="bg">
@@ -50,6 +68,11 @@
             <p class="me1">Hello, I'm</p>
             <p class="me2">JaeHyun Yu!</p>
             <p class="me3"> Full Stack Dev & Information Security Expert</p>
+            <div class="contact">
+                <a href="https://github.com/JaeHyunYu?tab=repositories"><i class="con fab fa-github"></i></a>
+                <a href="hi"><i class="con fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/yu_jaehyun/"><i class="con fab fa-instagram"></i></a>
+            </div>
         </div>
 
         <div class="introduce">
@@ -58,6 +81,7 @@
                 <p class="story2">WHATEVER</p>
             </div>
         </div>
+
     </div>
 
     <div class="part2" id="section2">
@@ -143,18 +167,18 @@
 
                 </div>
                 <div class="year1">
-                    <div class="id1"></div>
-                    <div class="id2"></div>
-                    <div class="id3"></div>
-                    <div class="id5"></div>
-                    <div class="id6"></div>
-                    <div class="id8"></div>
-                    <div class="id10"></div>
+                    <div class="id1 idd"></div>
+                    <div class="id2 idd"></div>
+                    <div class="id3 idd"></div>
+                    <div class="id5 idd"></div>
+                    <div class="id6 idd"></div>
+                    <div class="id8 idd"></div>
+                    <div class="id10 idd"></div>
                 </div>
                 <div class="year3">
-                    <div class="id4"></div>
-                    <div class="id7"></div>
-                    <div class="id9"></div>
+                    <div class="id4 idd"></div>
+                    <div class="id7 idd"></div>
+                    <div class="id9 idd"></div>
                 </div>
                 <div class="year2">
                     <div class="yeara">2018</div>
@@ -303,15 +327,6 @@
 
 
     <script>
-        let img = document.querySelector('.introimg');
-        for (i = 1; i < 11; i++) {
-            eval("var id" + i + "=document.querySelector('.id" + i + "')");
-            eval("var pb" + i + "=document.querySelector('.pbox" + i + "')");
-            console.log("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundcolor='black'; id" + i + ".style.zIndex=1;})");
-            eval("id" + i + ".addEventListener('mousemove', function () {pb" + i + ".style.visibility = 'visible'; id" + i + ".style.backgroundColor='#1995ad';img.src = 'photo" + i + ".JPG'; id" + i + ".style.zIndex=1;})");
-            eval("id" + i + ".addEventListener('mouseleave', function () {pb" + i + ".style.visibility = 'hidden'; id" + i + ".style.backgroundColor='#a1d6e2';id" + i + ".style.zIndex=0;})");
-
-        }
 
     </script>
     <script>

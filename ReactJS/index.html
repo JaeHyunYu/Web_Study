@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<!-- ReactJS 를 이용하여 변수 생성 대부분의 개발자들은 이 방식이 아닌 쉬운 방식으로 개발( 어려운 방법 )-->
+<!-- 본질을 배우기 위해서 일단은 어려운 방식으로 생산 -->
+
+<script>
+    const root = document.getElementById("root");
+    const span = React.createElement("span", { id: "sexy-span", style: { color: "red" } }, "Hello I'm a span"); // 여기 들어와야 하는 값은 생성하고자 하는 html tag값과 이름이 같아야 한다.
+    // 첫번째 인자가 들어갈 태그값, 두번째 인자가 첫번째 tag의 property값(id, class명 무엇이든 span에 주고 싶은 것)
+    // React는 interactive web을 만드는 것이고, React-dom이 html에 react 변수를 두는 것임
+    // 세번째 인자가 들어갈 값
+    ReactDOM.render(span, root); // render의 의미는 user에게 보여주는 역할이라고 생각하면 됨
+    // span이라는 변수를 root안에 두겠다 라는 의미
+
+</script>
+
+</html>
+
+<!--vanilla js를 이용한 코드는 html을 작성하고 그 다음에 js를 넣었지만
+reactjs는 순서가 반대임 js를 작성한 뒤, html을 작성!-->

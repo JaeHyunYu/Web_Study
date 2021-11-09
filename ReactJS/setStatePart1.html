@@ -7,17 +7,33 @@
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 
-<!-- ReactJS 를 이용하여 변수 생성 대부분의 개발자들은 이 방식이 아닌 쉬운 방식으로 개발( 어려운 방법 )-->
-<!-- 본질을 배우기 위해서 일단은 어려운 방식으로 생산 -->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    const App = () => (
-        <div>
-            <h3>Total clicks: {counter}</h3>
-            <button onClick={countUp}> Click me </button>
-        </div>
-    );
+    function App() {
+        /*
+        const date = React.useState(0)
+        // 위에 코드로 생성되어지는 건 data값과 그 data값을 바꿔줄 수 있는 함수가 배열로 선언되어짐
+        // useState(0) = 맨 처음 주는data값을 0으로 준다!
+        // console 창으로 확인해보면 [0,f] 이런식으로 선언되는 것을 확인할 수 있음
+        */
+
+        const [counter, modifier] = React.useState(0);
+        /*
+        위에 코드는
+        const counter=data[0];
+        const modifier=data[1];
+        해당 ㅋㅗㄷㅡㅇㅗㅏ ㄴㅐㅇㅛㅇㅇㅣ ㄱㅏㅌㅇㅡㅁ
+        */
+
+        console.log(date);
+        return (
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick={countUp}> Click me </button>
+            </div >
+        )
+    }
 
     ReactDOM.render(<App />, root);
 

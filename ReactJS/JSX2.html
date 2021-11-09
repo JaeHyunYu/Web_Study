@@ -12,41 +12,29 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    /*const Title = () => {
-        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-            Hi i'm a Title
-        </h3 >
-    }*/
-    function Title() {
-        return (
-            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-                Hi i'm a Title
-            </h3 >
-        );
-    }
-    const Button = () => (
-        <button
-            style={{
-                backgroundColor: "tomato",
-            }}
-            onClick={() => console.log("im clicked")}
-        >
-            Click me
-        </button>
-    );
+    let counter = 0;
+    // ReactJS에서는 변수를 연결할때 {변수명}이런식으로 연결해서 사용하면 됨
 
-    // 유의해야할 점은 React JSX에서 생성한 함수/Component 의 첫글자는 무조건 대문자여야함
-    // JSX는 이러한 함수형/Component를 표현할때 태그형식으로 표현한다는 것을 잊지마시오
-    // 소문자일 경우 Html 태그라고 생각되어짐
+    function countUp() {
+        counter = counter + 1;
+        render();
+        // Container를 rerendering해줌으로써 바뀌는 counter값을 렌더링! 보여주는 것!!
+    }
+
+    function render() {
+        ReactDOM.render(<Container />, root);
+    }
     const Container = () => (
         <div>
-            <Title />
-            <Button />
+            <h3>Total clicks: {counter}</h3>
+            <button onClick={countUp}> Click me </button>
         </div>
     );
-    // 이렇듯 JSX는 어플리케이션을 여러가지 작은 요소로 나누어 관리할 수 있게 해줌
 
-    ReactDOM.render(<Container />, root);
+    render();
+
+    // reactJs는 UI에서 바뀐 부분만 업데이트 해줌
+    // reactJs는 이전에 렌더링된 컴포넌트와 다음에 렌더링될 컴포넌트를 확인하고 다른부분만 업데이트!
 </script>
 
 </html>

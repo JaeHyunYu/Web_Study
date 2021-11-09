@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<!-- ReactJS 를 이용하여 변수 생성 대부분의 개발자들은 이 방식이 아닌 쉬운 방식으로 개발( 어려운 방법 )-->
+<!-- 본질을 배우기 위해서 일단은 어려운 방식으로 생산 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    /*const Title = () => {
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            Hi i'm a Title
+        </h3 >
+    }*/
+    function Title() {
+        return (
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                Hi i'm a Title
+            </h3 >
+        );
+    }
+    const Button = () => (
+        <button
+            style={{
+                backgroundColor: "tomato",
+            }}
+            onClick={() => console.log("im clicked")}
+        >
+            Click me
+        </button>
+    );
+
+    // 유의해야할 점은 React JSX에서 생성한 함수/Component 의 첫글자는 무조건 대문자여야함
+    // JSX는 이러한 함수형/Component를 표현할때 태그형식으로 표현한다는 것을 잊지마시오
+    // 소문자일 경우 Html 태그라고 생각되어짐
+    const Container = () => (
+        <div>
+            <Title />
+            <Button />
+        </div>
+    );
+    // 이렇듯 JSX는 어플리케이션을 여러가지 작은 요소로 나누어 관리할 수 있게 해줌
+
+    ReactDOM.render(<Container />, root);
+</script>
+
+</html>

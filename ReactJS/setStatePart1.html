@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<!-- ReactJS 를 이용하여 변수 생성 대부분의 개발자들은 이 방식이 아닌 쉬운 방식으로 개발( 어려운 방법 )-->
+<!-- 본질을 배우기 위해서 일단은 어려운 방식으로 생산 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const App = () => (
+        <div>
+            <h3>Total clicks: {counter}</h3>
+            <button onClick={countUp}> Click me </button>
+        </div>
+    );
+
+    ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

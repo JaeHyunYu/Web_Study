@@ -23,14 +23,27 @@
         위에 코드는
         const counter=data[0];
         const modifier=data[1];
-        해당 ㅋㅗㄷㅡㅇㅗㅏ ㄴㅐㅇㅛㅇㅇㅣ ㄱㅏㅌㅇㅡㅁ
+        해당 코드와 내용이 같음
         */
 
-        console.log(date);
+        const onClick = () => {
+            /*counter = counter + 1;
+            console.log(counter);
+            해당 주석코드가 우리가 보통 카운터를 증가시키고 로그를 보여줬음
+            그다음으로는 우린 리렌더링해주는 과정이 필요했었음
+            이를 위해서 ReactJS는 보다 간편한 방법을 제공!
+            */
+            modifier(counter + 1);
+            /*
+            modifier에 들어가는 값으로 data(counter)의 값이 업데이트되고 리렌더링을 일으킴!
+            이 얼마나 간편한 ReactJS!인가!!
+            */
+        };
+
         return (
             <div>
                 <h3>Total clicks: {counter}</h3>
-                <button onClick={countUp}> Click me </button>
+                <button onClick={onClick}> Click me </button>
             </div >
         )
     }

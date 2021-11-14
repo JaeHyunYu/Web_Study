@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<!-- ReactJS 를 이용하여 변수 생성 대부분의 개발자들은 이 방식이 아닌 쉬운 방식으로 개발( 어려운 방법 )-->
+<!-- 본질을 배우기 위해서 일단은 어려운 방식으로 생산 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
+    // ReactJS에서는 변수를 연결할때 {변수명}이런식으로 연결해서 사용하면 됨
+
+    function countUp() {
+        counter = counter + 1;
+        render();
+        // Container를 rerendering해줌으로써 바뀌는 counter값을 렌더링! 보여주는 것!!
+    }
+
+    function render() {
+        ReactDOM.render(<Container />, root);
+    }
+    const Container = () => (
+        <div>
+            <h3>Total clicks: {counter}</h3>
+            <button onClick={countUp}> Click me </button>
+        </div>
+    );
+
+    render();
+
+    // reactJs는 UI에서 바뀐 부분만 업데이트 해줌
+    // reactJs는 이전에 렌더링된 컴포넌트와 다음에 렌더링될 컴포넌트를 확인하고 다른부분만 업데이트!
+</script>
+
+</html>

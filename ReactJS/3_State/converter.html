@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    function App() {
+
+        const [minutes, setMinutes] = React.useState();
+
+        const onChange = (event) => {
+            console.log(event.target.value);
+            setMinutes(event.target.value);
+            /*
+            ReactJS는 vanilla JS와 매우 흡사함
+            함수에 event값을 넣어줘서 event를 불러오고
+            event.target.value를 하면 input의 value값을 얻어올 수 있다!
+            해당 방식이 ReactJS에서 form을 다루는 방식!
+            
+            */
+        };
+
+
+        return (
+            <div>
+
+
+                {/*
+                <h1 class="hi">Super Converter</h1>
+                <label for="minutes">Minutes</label>
+                <input id="minutes" placeholder="Minutes" type="number" />
+                <label for="Hours">Hours</label>
+                <input id="Hours" placeholder="Hours" type="number" />
+                이 코드는 HTML코드임 
+                JSX 문법에 맞게 바꾸면 아래 코드처럼!
+
+                JSX에선 class 사용 X 대신에 className
+                for 을 htmlfor로!
+                */}
+                <h1 className="hi">Super Converter</h1>
+
+                <label htmlfor="minutes">Minutes</label>
+                <input value={minutes}
+                    id="minutes"
+                    placeholder="Minutes"
+                    type="number"
+                    onChange={onChange}
+
+                />
+                {/* onChange는 input에 변화가 있을때마다 그다음에 있는걸 호출하겠다 의미 
+                    해당 코드에선 onChange함수를 불러오겠다 라는 의미*/}
+
+                <h4>check! {minutes}</h4>
+                <label htmlfor="Hours">Hours</label>
+                <input id="Hours" placeholder="Hours" type="number" />
+            </div>
+        )
+    }
+
+    ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

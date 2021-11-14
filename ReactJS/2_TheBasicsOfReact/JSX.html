@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!--JSX는 Javascript를 확장한 개념 
+    JSX 는 보다 간편하게 앞서서 작성했던 방식으로 React 요소를 만들 수 있게 해줌-->
+<script type="text/babel">
+    const root = document.getElementById("root");
+    /*const Title = () => {
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            Hi i'm a Title
+        </h3 >
+    }*/
+
+    // JSX는 아래 보이는 바와 같이 간단하게 REACT component를 HTML기법과 비슷하게 작성할 수 있게 해줌
+    const Title = (
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            Hello I'm a title
+        </h3>
+    );
+
+    /* 위에 코드가 아래 React Component 요소 작서하는 거와 같음
+    JSX가 위에 코드를 아래로 바꿔주는 역할을 하는 것!
+    const h3 = React.createElement(
+        "h3",
+        {
+            id = "title",
+            onMouseEnter: () => console.log("mouse enter"),
+        },
+        "Hello I'm a title"
+    )
+    */
+    const Button = <button onClick={() => console.log("imclicked")} style={{ backgroundColor: "tomato" }}>
+        Click me
+    </button >
+
+    /*
+    해당 코드도 마찬가지로 위와 같은 내용임
+    const btn = React.creatElement(
+        "button",
+        {
+            onClick: () => console.log("im clicked"),
+            style: {
+                backgroundColor: "tomato"
+            }
+        },
+        "Click me"
+    );
+        */
+
+    const container = React.createElement("div", null, [Title, Button]);
+    ReactDOM.render(container, root);
+
+</script>
+
+</html>

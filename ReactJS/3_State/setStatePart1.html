@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    function App() {
+        /*
+        const date = React.useState(0)
+        // 위에 코드로 생성되어지는 건 data값과 그 data값을 바꿔줄 수 있는 함수가 배열로 선언되어짐
+        // useState(0) = 맨 처음 주는data값을 0으로 준다!
+        // console 창으로 확인해보면 [0,f] 이런식으로 선언되는 것을 확인할 수 있음
+        */
+
+        const [counter, modifier] = React.useState(0);
+        /*
+        위에 코드는
+        const counter=data[0];
+        const modifier=data[1];
+        해당 코드와 내용이 같음
+        */
+
+        const onClick = () => {
+            /*counter = counter + 1;
+            console.log(counter);
+            해당 주석코드가 우리가 보통 카운터를 증가시키고 로그를 보여줬음
+            그다음으로는 우린 리렌더링해주는 과정이 필요했었음
+            이를 위해서 ReactJS는 보다 간편한 방법을 제공!
+            */
+
+            // modifier(counter + 1);
+            /*
+            modifier에 들어가는 값으로 data(counter)의 값이 업데이트되고 리렌더링을 일으킴!
+            이 얼마나 간편한 ReactJS!인가!!
+            해당 방법은 current state값을 이용해서 새로운 값으로 변경해주는 역할
+                - counter+1을 할당해주니까 counter값을 쓰니까 current value 쓰는거!
+                    - 이런 current state를 이용한 다음 state를 바꾸는 것은 좋지 않음
+                        => 따라서 state값을 변경하는 것에는 두가지 방법이 있음
+                            - 첫번째가 위의 방법 (modifier를 이용하여 값을 넣어주는것)
+                    */
+
+            modifier(current => current + 1);
+            /*
+            - 이전값을 바탕으로 현재값을 설정하는 상황이라면 위에 코드를 사용하는것이 낫다.
+            - 위에 두 코드는 같은 역할을 하지만 바로 위코드가 안전함.
+                - modifier(counter+1); 이렇게 사용하게되면 counter가 어느 부분에서 바뀌는 risk가 생기기 떄문에!!
+
+            */
+        };
+
+        return (
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick={onClick}> Click me </button>
+            </div >
+        )
+    }
+
+    ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

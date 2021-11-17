@@ -10,7 +10,9 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    function App() {
+
+
+    function MinutesToHours() {
 
         const [amount, setAmount] = React.useState();
         const [flipped, setFlipped] = React.useState(false);
@@ -38,19 +40,17 @@
             <div>
                 <div>
                     {/*
-                <h1 class="hi">Super Converter</h1>
-                <label for="minutes">Minutes</label>
-                <input id="minutes" placeholder="Minutes" type="number" />
-                <label for="Hours">Hours</label>
-                <input id="Hours" placeholder="Hours" type="number" />
-                이 코드는 HTML코드임 
-                JSX 문법에 맞게 바꾸면 아래 코드처럼!
+        <h1 class="hi">Super Converter</h1>
+        <label for="minutes">Minutes</label>
+        <input id="minutes" placeholder="Minutes" type="number" />
+        <label for="Hours">Hours</label>
+        <input id="Hours" placeholder="Hours" type="number" />
+        이 코드는 HTML코드임 
+        JSX 문법에 맞게 바꾸면 아래 코드처럼!
 
-                JSX에선 class 사용 X 대신에 className
-                for 을 htmlfor로!
-                */}
-                    <h1 className="hi">Super Converter</h1>
-
+        JSX에선 class 사용 X 대신에 className
+        for 을 htmlfor로!
+        */}
                     <label htmlfor="minutes">Minutes</label>
                     <input value={flipped ? amount * 60 : amount}
                         id="minutes"
@@ -60,7 +60,7 @@
                         disabled={flipped === true}
                     />
                     {/* onChange는 input에 변화가 있을때마다 그다음에 있는걸 호출하겠다 의미 
-                    해당 코드에선 onChange함수를 불러오겠다 라는 의미*/}
+            해당 코드에선 onChange함수를 불러오겠다 라는 의미*/}
 
                     <h4>check! {amount}</h4>
                     <label htmlfor="Hours">Hours</label>
@@ -77,6 +77,31 @@
                 <button onClick={reset}>Reset</button>
 
                 <button onClick={onFlip}>Flip</button>
+            </div>
+        )
+    }
+    function KmToMiles() {
+        const [distance, setdistance] = React.useState();
+        const [flipped, setflipped] = React.useState(true);
+        return <h3>KM 2 M </h3>;
+    }
+    function App() {
+        const [index, setIndex] = React.useState("0");
+        const onSelect = (event) => {
+            setIndex(event.target.value);
+        }
+        return (
+            <div>
+                <h1 className="hi">Super Converter</h1>
+                <select value={index} onChange={onSelect}>
+                    <option value="0"> Minutes&Hours</option>
+                    <option value="1"> Km & Miles</option>
+                </select>
+                {index === "0" ? <MinutesToHours /> : null}
+                {index === "1" ? <KmToMiles /> : null}
+                {/* {} 안에 작성하는 건 js로 인식함@ */}
+
+                {/*이런식으로 코드를 분할정복(diveide and conquer! 할수 있다!*/}
             </div>
         )
     }

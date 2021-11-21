@@ -83,7 +83,43 @@
     function KmToMiles() {
         const [distance, setdistance] = React.useState();
         const [flipped, setflipped] = React.useState(true);
-        return <h3>KM 2 M </h3>;
+        const onChange = (event) => {
+            console.log(event.target.value);
+            setdistance(event.target.value);
+        }
+        const reset = () => {
+            setdistance(0);
+        }
+        const onFlip = () => {
+            reset();
+            setflipped(current => !current);
+            // flipped값의 반대로 세팅! true면 false로 그반대는 반대로!
+        }
+
+        return (
+            <div>
+                <h3> KM 2 M </h3>
+                <label htmlfor="miles">miles</label>
+                <input
+                    value={flipped ? distance * 1000 : distance}
+                    id="miles"
+                    placeholder="miles"
+                    type="number"
+                    onChange={onChange}
+                    disabled={flipped === true}
+                />
+                <label htmlfor="km">KM</label>
+                <input
+                    value={!flipped ? distance / 1000 : distance}
+                    id="km"
+                    placeholder="miles"
+                    type="number"
+                    onChange={onChange}
+                    disabled={flipped === false}
+                />
+                <button onClick={onFlip}>flip</button>
+            </div>
+        )
     }
     function App() {
         const [index, setIndex] = React.useState("0");

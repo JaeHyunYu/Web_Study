@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+
+    function Btn(props) {
+        return <button style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10
+            // 이런식으로 스타일을 줄수도 있고 css등 여러 방식으로 줄수도 있지만
+            // 이런식으로 각 버튼들을 컴포넌트로 따로따로 만들고 스타일을 주면 스타일을 줄때마다 다 복붙해야됨..
+
+        }}>{props.text}</button>;
+        // 이래서 그냥 이런 설정가능한 컴포넌트를 한개로 만들고 안에 들어가는 값을 바꿔주는 방식으로 만들거임!
+        // props로부터 부모로부터 인자를 받아오는거!
+    }
+
+    function App() {
+
+        return (
+            <div>
+                <Btn text="SaveChanges" val="b" />
+                <Btn text="Confirm" val="c" />
+                {/*이런식으로 text(이름은 내맘으대로 설정)해서 부모 컴포넌트에서
+                자식 컴포넌트로 값을 넘겨줄수 있음!
+                이렇게 값들을 props로 넘겨주는거!
+            props는 object꼴로 다 받아옴*/}
+
+            </div >
+        )
+    }
+
+    ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

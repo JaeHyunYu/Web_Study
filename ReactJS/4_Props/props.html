@@ -11,17 +11,19 @@
 <script type="text/babel">
     const root = document.getElementById("root");
 
-    function Btn(props) {
+    function Btn({ text, big }) {
+        // 여기서 그냥 props로 받고 아래 사용할때 props.property이름 이렇게 불러와도되지만
+        // 그냥 불러오는 값을 {}안에 이름대로 넣어서 바로 사용할 수도 있음! shortcut(지름길)
         return <button style={{
             backgroundColor: "tomato",
             color: "white",
             padding: "10px 20px",
             border: 0,
-            borderRadius: 10
+            borderRadius: 10,
             // 이런식으로 스타일을 줄수도 있고 css등 여러 방식으로 줄수도 있지만
             // 이런식으로 각 버튼들을 컴포넌트로 따로따로 만들고 스타일을 주면 스타일을 줄때마다 다 복붙해야됨..
-
-        }}>{props.text}</button>;
+            fontSize: big ? 18 : 10,
+        }}>{text}</button>;
         // 이래서 그냥 이런 설정가능한 컴포넌트를 한개로 만들고 안에 들어가는 값을 바꿔주는 방식으로 만들거임!
         // props로부터 부모로부터 인자를 받아오는거!
     }
@@ -30,8 +32,8 @@
 
         return (
             <div>
-                <Btn text="SaveChanges" val="b" />
-                <Btn text="Confirm" val="c" />
+                <Btn text="SaveChanges" big={true} />
+                <Btn text="Confirm" big={false} />
                 {/*이런식으로 text(이름은 내맘으대로 설정)해서 부모 컴포넌트에서
                 자식 컴포넌트로 값을 넘겨줄수 있음!
                 이렇게 값들을 props로 넘겨주는거!

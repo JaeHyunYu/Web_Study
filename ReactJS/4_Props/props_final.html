@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+
+    function Btn({ text, fontSize = 12 }) {
+        // 만약 prop으로 fontSize가 안넘어오면 기본값으로 12를 주겠다는 의미!
+        return <button style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize: fontSize,
+        }}>{text}</button>;
+    }
+
+    Btn.propTypes = {
+        text: PropTypes.string,
+        fontSize: PropTypes.number
+        // 이런식으로 prop 타입을 감지해주면됨!!
+        // 더 확실히 해주려면 뒤에 .isRequired하면 값이 무조건 있어야되는거
+        // 지금은 그냥 타입만 맞으면됨 없어도 ㄱㅊ
+    }
+    function App() {
+
+        const changeValue = () => setValue("Revert Changes");
+        return (
+            <div>
+                <Btn text="hi" fontSize={18} />
+                {/*여기서 만약 개발중 개발자/팀원이 prop type을 반대로
+                text={18} fontSize="hi"이렇게 해버리면 오류가 뜰것임
+                하지만 이건 에러지, 코드 문법오류가 아님!
+                ReactJS는 이걸 모름..! -> 이걸 보안하기위해서 ReactJS prop script를 넣어주면됨
+                 => 만약 TS(TypeScript)를 쓴다면 쓸필요는 X..!
+    */}
+
+                <Btn text="Confirm" />
+
+            </div >
+        )
+    }
+
+    ReactDOM.render(<App />, root);
+
+</script>
+
+</html>

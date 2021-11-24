@@ -11,7 +11,7 @@
 <script type="text/babel">
     const root = document.getElementById("root");
 
-    function Btn({ text, onClick }) {
+    function Btn({ text, onClick, fontSize }) {
         // 여기서 그냥 props로 받고 아래 사용할때 props.property이름 이렇게 불러와도되지만
         // 그냥 불러오는 값을 {}안에 이름대로 넣어서 바로 사용할 수도 있음! shortcut(지름길)
         return <button onClick={onClick} style={{
@@ -23,7 +23,7 @@
             borderRadius: 10,
             // 이런식으로 스타일을 줄수도 있고 css등 여러 방식으로 줄수도 있지만
             // 이런식으로 각 버튼들을 컴포넌트로 따로따로 만들고 스타일을 주면 스타일을 줄때마다 다 복붙해야됨..
-            fontSize: 16,
+            fontSize: fontSize,
         }}>{text}</button>;
         // 이래서 그냥 이런 설정가능한 컴포넌트를 한개로 만들고 안에 들어가는 값을 바꿔주는 방식으로 만들거임!
         // props로부터 부모로부터 인자를 받아오는거!
@@ -37,7 +37,7 @@
         const changeValue = () => setValue("Revert Changes");
         return (
             <div>
-                <Btn text={value} onClick={changeValue} />
+                <Btn text={value} onClick={changeValue} fontSize={18} />
                 {/* 여기 들어가는 onClick은 eventlistner가 아니라 prop의 이름일뿐임!
                 헷갈리면 안됨 즉, Btn 컴포넌트로 전달되는 prop의 한개! 
                 이런식으로 prop으로 함수를 넣어줄 수 있음

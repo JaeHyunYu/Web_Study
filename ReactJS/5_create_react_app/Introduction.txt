@@ -1,0 +1,17 @@
+create-react-app 을 안사용하면 위에 매우 많은 스크립트들과 사전설정들을 수기로 설정해야하기 떄문에
+create-react-app을 사용!	
+
+1. nodejs설치
+2. node -v (버전확인) , npx 명령어 확인
+3. npx create-react-app 파일명
+	-> 설치!
+4. 설치 완료후 visual studio로 확인해보면 package.json에 여러 스크립트들이 있는 것 확인가능
+5. npm start로 시작!
+
+
+src폴더는 내 모든 파일들을 넣을 폴더!
+
+create-reactapp은 public에 index.html 안에 들어가도록 설정되어져 있음! ( div id=root가 있음 index.html에)
+자동으로 설정되어 있음
+
+create-react-app을 사용하는 것의 한가지 장점은 자동업데이트!

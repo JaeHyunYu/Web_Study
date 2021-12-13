@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function App() {
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
-  const [money, setMoney] = useState(1);
+  const [money, setMoney] = useState(0);
   const [value, setValue] = useState(1);
 
   const onChange = (event) => {
@@ -36,9 +36,11 @@ function App() {
           <select onChange={onChange}>
             {coins.map((coin) => <option id={coin.name} value={coin.quotes.USD.price} value2={coin.name}>{coin.name} ({coin.symbol}) : {coin.quotes.USD.price} USD</option>)}
           </select>
-          {money != 1 && value != 1} ?<p>You can change {money} USD into {money / value} coin </p> : null
-
         </div>
+      }
+
+      {
+        money != 0 && value != 1 ? <p>You can change {money} USD into {money / value} coin </p> : null
       }
     </div >
   )

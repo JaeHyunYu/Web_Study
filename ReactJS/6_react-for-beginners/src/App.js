@@ -4,48 +4,40 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [money, setMoney] = useState(0);
-  const [value, setValue] = useState(1);
+  const [movies, setMovies] = useState([]);
+  const getMovies = async () => {
+    const response = await fetch(
+      'https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year'
+    );
 
-  const onChange = (event) => {
-    setValue(event.target.value);
+    const json = await response.json();
+    setMovies(json.data.movies);
+    setLoading(false);
   }
 
-  const onCng = (event) => {
-    setMoney(event.target.value);
-  }
+
   useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers")
-      .then((response) => response.json())
-      .then((json) => {
-        setCoins(json);
-        setLoading(false);
-      });
-    // 위에 fetch를 이용해서 coinpaprik에서 tickers들을 json형식으로 불러들여 coins라는 스테이트(배열)에 넣어줌
-  }, [])
+    getMovies();
+
+  }, []);
+
+  console.log(movies);
   return (
     <div>
-      <h1>
-        The Coins ({coins.length})
-      </h1>
-      {loading ? <strong>Loading...</strong> :
-        <div>
-          <input placeholder='money' onChange={onCng}></input>
-          <br></br>
-          <select onChange={onChange}>
-            {coins.map((coin) => <option id={coin.name} value={coin.quotes.USD.price} value2={coin.name}>{coin.name} ({coin.symbol}) : {coin.quotes.USD.price} USD</option>)}
-          </select>
-        </div>
-      }
+      {loading ? <h1>loading</h1> : movies.map(movie =>
+        <div key={movie.id}>
+          <img src={movie.medium_cover_image} />
+          <h2>{movie.title}</h2>
+          <p>{movie.summary}</p>
+          <ul>
+            {movie.genres.map((g) => (<li key={g}>{g}</li>)
+            )}
 
-      {
-        money != 0 && value != 1 ? <p>You can change {money} USD into {money / value} coin </p> : null
-      }
-    </div >
+            {/* map을 쓰려면 각 교유한 key가 있어야함! */}
+          </ul>
+        </div>)}
+    </div>
   )
 }
 
-// coinpaprika라는 api는 매우 많은 코인의 정보를 넘겨줌
-// api.coinpaprika.com/v1/tickers
 export default App;

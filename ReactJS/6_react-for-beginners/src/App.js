@@ -1,42 +1,29 @@
-import Button from "./Button"
-import styles from "./App.module.css"
-import { useState, useEffect } from "react";
-
+import { useEffect, useState } from 'react';
+import Movie from './components/Movie';
+import Detail from './routes/Detail'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom"
+import Home from "./routes/Home"
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const response = await fetch(
-      'https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year'
-    );
-
-    const json = await response.json();
-    setMovies(json.data.movies);
-    setLoading(false);
-  }
-
-
-  useEffect(() => {
-    getMovies();
-
-  }, []);
-
-  console.log(movies);
   return (
-    <div>
-      {loading ? <h1>loading</h1> : movies.map(movie =>
-        <div key={movie.id}>
-          <img src={movie.medium_cover_image} />
-          <h2>{movie.title}</h2>
-          <p>{movie.summary}</p>
-          <ul>
-            {movie.genres.map((g) => (<li key={g}>{g}</li>)
-            )}
+    <Router>
+      <Switch>
+        <Route path="/moviegg">
+          <Detail />
+        </Route>
 
-            {/* map을 쓰려면 각 교유한 key가 있어야함! */}
-          </ul>
-        </div>)}
-    </div>
+        <Route path="/">
+          {/*누군가가 뒤에 /이렇게만 붙어있는 url로가면  Home route로 간다는 의미*/}
+          <Home />
+        </Route>
+        {/* switch 는 route를 찾는애임  route는 뒤에 붙는 url을 의미함
+      route를 찾으면 그 component를 render하게됨*/}
+      </Switch >
+
+    </Router>
   )
 }
 

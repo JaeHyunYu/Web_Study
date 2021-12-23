@@ -1,0 +1,22 @@
+/*
+npm i gh-pages
+gh-pages는 결과물을 github pages에 업로드 할 수 있게 해주는 패키지임
+
+production only=>
+npm build를 통해 실행하는데 이뜻은
+코드를 압축하고 최적화 하는거임
+build폴더가 생기는데 사람눈이 보기엔 이상한 압축된 코드들이 있게됨
+
+이제 깃허브에 publish하면됨
+package.json으로 가서 생성!
+
+맨아래 } 위에 "homepage": "https://JaeHyunYu.github.io/MovieApp_ReactJS" 이런식으로 코드가 들어잇는 repository 추가
+
+그리고 script에 추가
+"deploy": "gh-pages -d build"
+build라는 디렉터리를 가져가는 거! gh-pages가 hompage에 적어둔 링크에 홈페이지를 가져가는 그런 역할!
+"predeploy":"npm run build"
+-> deploy를 실행하기전 build를 생성하고 deploy가 실행될 수 있도록 predeploy를 만든거!
+
+이제 그냥 npm run deploy를 하면 깃허브 페이지에 푸쉬가 되서 확인가능! => 시간이 지나면 확인가능
+*/

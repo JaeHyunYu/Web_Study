@@ -9,7 +9,9 @@ function Movie({ medium_cover_image, title, summary, genres, id }) {
         또 위에 보이는 거와 같이 property(id)를 넘겨줄 수 있게됨
             */}
         </h2>
-        <p>{summary}</p>
+        <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
+        {/*영화마다 summary 길이가 다 다름 이걸 좀 더 이쁘게 해줄것임 
+        summary는 string이기때문에 배열method 사용가능(slice method는 0~235까지 배열을 의미*/}
         <ul>
             {genres.map((g) => (<li key={g}>{g}</li>)
             )}

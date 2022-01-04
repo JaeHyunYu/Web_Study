@@ -1,0 +1,15 @@
+.container {
+ text-align: center;
+ border: solid;
+ width: 40%;
+ margin:5px;
+ border-radius: 10%;
+
+}
+
+.img{
+    margin:3px;
+    border-radius: 20%;
+    border:solid;
+    
+}

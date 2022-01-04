@@ -1,14 +1,17 @@
 .container {
-    height: 100%;
+    
     display: flex;
     justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
   }
 
   .movies {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(400px, 1fr));
-    grid-gap: 100px;
-    padding: 50px;
-    width: 80%;
-    padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*border:solid;*/
+
   }

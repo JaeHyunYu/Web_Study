@@ -16,7 +16,6 @@ function Home() {
         setLoading(false);
     }
 
-
     useEffect(() => {
         getMovies();
 
@@ -27,17 +26,19 @@ function Home() {
         <div className={styles.container}>
             {loading ? <h1>loading</h1> :
                 (
-
-                    <div>
-                        {movies.map(movie => (
-                            <Movie
-                                key={movie.id}
-                                id={movie.id}
-                                medium_cover_image={movie.medium_cover_image}
-                                title={movie.title}
-                                summary={movie.summary}
-                                genres={movie.genres} />
-                        ))}
+                    <div style={{ textAlign: 'center' }}>
+                        <h2>Movie</h2>
+                        <div className={styles.movies}>
+                            {movies.map(movie => (
+                                <Movie
+                                    key={movie.id}
+                                    id={movie.id}
+                                    medium_cover_image={movie.medium_cover_image}
+                                    title={movie.title}
+                                    summary={movie.summary}
+                                    genres={movie.genres} />
+                            ))}
+                        </div>
                     </div>
                 )
             }

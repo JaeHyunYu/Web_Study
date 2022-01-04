@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import propTypes from "prop-types";
+import styles from "./Movie.module.css";
 function Movie({ medium_cover_image, title, summary, genres, id }) {
     return (
-        <div>
-            <img src={medium_cover_image} alt={title} />
+        <div className={styles.container}>
+            <img className={styles.img} src={medium_cover_image} alt={title} />
             <h2>
                 <Link to={`/movie/${id}`}>{title}</Link>
                 {/* Link를 통해 브라우저 전체가 새로고침되는 걸 막을 수 있음! a tag와 같지만 더 효율적!

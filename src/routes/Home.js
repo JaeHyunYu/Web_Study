@@ -19,7 +19,12 @@ function Home() {
     }
 
     const onChange = (event) => {
-        setRating(event.target.value);
+        if (event.target.value < 10 && event.target.value > 0) {
+            setRating(event.target.value);
+        }
+        else {
+            setRating(0);
+        }
     }
 
     useEffect(() => {

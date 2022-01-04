@@ -1,14 +1,16 @@
 
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie"
-import propTypes from "prop-types";
+import propTypes, { number } from "prop-types";
 import styles from "./Home.module.css";
 function Home() {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
+    const [rating, setRating] = useState(5);
+
     const getMovies = async () => {
         const response = await fetch(
-            'https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year'
+            `https://yts.mx/api/v2/list_movies.json?minimum_rating=${rating}&sort_by=year`
         );
 
         const json = await response.json();
@@ -16,10 +18,14 @@ function Home() {
         setLoading(false);
     }
 
+    const onChange = (event) => {
+        setRating(event.target.value);
+    }
+
     useEffect(() => {
         getMovies();
 
-    }, []);
+    }, [rating]);
 
     console.log(movies);
     return (
@@ -27,7 +33,15 @@ function Home() {
             {loading ? <h1>loading</h1> :
                 (
                     <div style={{ textAlign: 'center' }}>
-                        <h2>Movie</h2>
+
+                        <label htmlFor='rating'>Rating: </label>
+                        <input
+                            value={rating}
+                            id="rating"
+                            placeholder='Rating'
+                            type="number"
+                            onChange={onChange} />
+                        <h2>More than [{rating}]rating Movie Lists</h2>
                         <div className={styles.movies}>
                             {movies.map(movie => (
                                 <Movie

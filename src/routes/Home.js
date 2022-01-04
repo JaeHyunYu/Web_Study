@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie"
 import propTypes from "prop-types";
-
+import styles from "./Home.module.css";
 function Home() {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
@@ -24,26 +24,33 @@ function Home() {
 
     console.log(movies);
     return (
-        <div>
-            {loading ? <h1>loading</h1> : movies.map(movie => (
-                <Movie
-                    key={movie.id}
-                    id={movie.id}
-                    medium_cover_image={movie.medium_cover_image}
-                    title={movie.title}
-                    summary={movie.summary}
-                    genres={movie.genres} />
-            ))}
-        </div>
+        <div className={styles.container}>
+            {loading ? <h1>loading</h1> :
+                (
+
+                    <div>
+                        {movies.map(movie => (
+                            <Movie
+                                key={movie.id}
+                                id={movie.id}
+                                medium_cover_image={movie.medium_cover_image}
+                                title={movie.title}
+                                summary={movie.summary}
+                                genres={movie.genres} />
+                        ))}
+                    </div>
+                )
+            }
+        </div >
     )
 }
 
 Movie.propTypes = {
-    id: propTypes.string.isRequired,
+    //id: propTypes.string.isRequired,
     medium_cover_image: propTypes.string.isRequired,
     title: propTypes.string.isRequired,
     summary: propTypes.string.isRequired,
-    genres: propTypes.arrayOf(propTypes.string).isRequired
+    // genres: propTypes.arrayOf(propTypes.string).isRequired
 }
 
 //React Router : 페이지를 전환시키는 거!

@@ -10,8 +10,6 @@ function Nav() {
                 <MdPerson />
                 <MdLocationOn />
                 <GiHamburgerMenu />
-
-
             </div>
         </div >
     );

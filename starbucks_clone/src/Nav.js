@@ -5,7 +5,6 @@ function Nav() {
     return (
         <div className={styles.wrap}>
             <a href="/" className={styles.logo}></a>
-
             <div className={styles.icons}>
                 <MdPerson />
                 <MdLocationOn />

@@ -4,9 +4,7 @@ import Section1 from './Section1';
 function App() {
   return (
     <div className={styles.whole} style={{ display: 'flex', flexDirection: 'column' }}>
-      <div className={styles.nav}>
-        <Nav />
-      </div>
+      <Nav />
       <Section1 />
 
     </div >

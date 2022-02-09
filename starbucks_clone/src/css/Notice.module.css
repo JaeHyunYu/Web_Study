@@ -1,0 +1,41 @@
+.wrap{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+
+}
+
+.section1{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.section_font{
+    font-family:'Malgun Gothic';
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.section2{
+    width: 50%;
+    height: 100%;
+    background-color: #f6f5f0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.icon{
+    font-size: 45px;
+    margin-right: 10px;
+}
+
+

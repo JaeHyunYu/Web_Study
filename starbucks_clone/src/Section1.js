@@ -1,4 +1,4 @@
-import styles from './Section1.module.css';
+import styles from './css/Section1.module.css';
 function Section1() {
     return (
         <div className={styles.wrap}>

@@ -8,7 +8,10 @@ function Notice_sec() {
 
 
             <div className={styles.section1}>
-                <p className={styles.section_font} style={{ color: 'white' }}>공지사항</p>
+                <div className={styles.notice_div}>
+                    <p className={styles.section_font} style={{ color: 'white' }}>공지사항</p>
+                    <p className={styles.section_carousel}>시스템 개선 및 점검 안내</p>
+                </div>
                 <BsPlusCircle className={styles.icon} style={{ color: 'white' }} />
             </div>
             <div className={styles.section2}>

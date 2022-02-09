@@ -17,11 +17,21 @@
 }
 .section_font{
     font-family:'Malgun Gothic';
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
 }
 
+.notice_div{
+    display: flex;
+    align-items: center;
+}
+.section_carousel{
+    font-family:'Malgun Gothic';
+    font-size: 16px;
+    margin-left: 15px;
+    color: white;
+}
 
 .section2{
     width: 50%;

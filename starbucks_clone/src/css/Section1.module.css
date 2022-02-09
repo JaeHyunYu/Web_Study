@@ -1,12 +1,10 @@
 
 .wrap{
-    margin-top:70px;
     background-image: url('https://image.istarbucks.co.kr/img/event/2022/2022_Strawberry_main_bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     position:relative;
     height: 588px;
-    
 }
 .title{
     position:absolute;

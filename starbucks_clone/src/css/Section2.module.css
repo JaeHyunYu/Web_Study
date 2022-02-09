@@ -1,0 +1,12 @@
+.wrap{
+    width: 100vw;
+    height: 500px;
+    background-color: #1e3932;
+    display: flex;
+}
+
+.logo{
+    margin-top: 30px;
+    width: 248px;
+    height: 215px;
+}

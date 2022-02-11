@@ -3,6 +3,35 @@
     height: 500px;
     background-color: #1e3932;
     display: flex;
+    justify-content: center;
+}
+
+
+.section1{
+    width: 30%;
+    background-color: blue;
+}
+.line{
+    width: 100%;
+    color: #49625c;
+}
+.section2{
+    width: 50%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    
+}
+.info_con{ 
+    width: 100%;
+    font-family:'Malgun Gothic';
+    font-size: 17px;
+    color: white;
+}
+.gift_con{
+    width: 100%;
+    font-family:'Malgun Gothic';
+    color: white;
 }
 
 .logo{
@@ -10,3 +39,21 @@
     width: 248px;
     height: 215px;
 }
+
+.button1{
+    background-color: #00704a;
+    border-radius: 5px;
+    border:none;
+    font-family:'Malgun Gothic';
+    color: white;
+    height: 38px;
+}
+.button2{
+    background-color: transparent;
+    border-radius: 5px;
+    border: solid 2px;
+    font-family:'Malgun Gothic';
+    color: white;
+    height: 38px;
+}
+

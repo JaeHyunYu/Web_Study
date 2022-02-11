@@ -4,7 +4,8 @@
     background-repeat: no-repeat;
     background-position: center;
     position:relative;
-    height: 588px;
+    padding-top:70px;
+    height: 518px;
 }
 .title{
     position:absolute;

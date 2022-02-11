@@ -16,7 +16,7 @@ function Notice_sec() {
             </div>
             <div className={styles.section2}>
                 <p className={styles.section_font}>스타벅스 프로모션</p>
-                <IoIosArrowDropdown className={styles.icon} />
+                <IoIosArrowDropdown classNanpmme={styles.icon} />
             </div>
 
         </div >

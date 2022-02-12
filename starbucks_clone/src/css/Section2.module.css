@@ -9,15 +9,18 @@
 
 .section1{
     width: 30%;
-    background-color: blue;
 }
 .line{
     width: 100%;
-    color: #49625c;
+    border-color: #49625c;
+    margin-top:15px;
+    
+}
+.Bigfont{
+    font-size: 24px;
 }
 .section2{
     width: 50%;
-    background-color: gray;
     display: flex;
     flex-direction: column;
     
@@ -26,16 +29,19 @@
     width: 100%;
     font-family:'Malgun Gothic';
     font-size: 17px;
+    line-height: 1.4;
     color: white;
 }
 .gift_con{
     width: 100%;
     font-family:'Malgun Gothic';
+    
+    line-height: 1.4;
     color: white;
 }
 
 .logo{
-    margin-top: 30px;
+    margin-top: 70px;
     width: 248px;
     height: 215px;
 }
@@ -45,8 +51,10 @@
     border-radius: 5px;
     border:none;
     font-family:'Malgun Gothic';
+    width: 92px;
     color: white;
     height: 38px;
+    margin-right: 5px;
 }
 .button2{
     background-color: transparent;
@@ -55,5 +63,7 @@
     font-family:'Malgun Gothic';
     color: white;
     height: 38px;
+    padding: 8px 25px 18px 25px;
+    
 }
 

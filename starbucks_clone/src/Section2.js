@@ -11,7 +11,7 @@ function Section2() {
             <div className={styles.section2}>
 
                 <div className={styles.info_con}>
-                    <h2>스타벅스만의 특별한 혜택,<br></br><strong>스타벅스 리워드</strong></h2>
+                    <p className={styles.Bigfont}>스타벅스만의 특별한 혜택,<br></br><strong>스타벅스 리워드</strong></p>
                     <p>
                         <strong>스타벅스 회원이세요?</strong>
                         로그인을 통해<br></br>
@@ -21,7 +21,7 @@ function Section2() {
                         가입을 통해 리워드 혜택을 즐기세요.
                     </p>
 
-                    <div>
+                    <div className={styles.InfoButtons}>
                         <button className={styles.button1}>회원가입</button>
 
                         <button className={styles.button2}>로그인</button>

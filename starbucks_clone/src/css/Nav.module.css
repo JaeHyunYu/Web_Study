@@ -27,3 +27,75 @@
     color:#55443a;
     margin-right: 5px;
 }
+
+.wrap_inner{
+    background-color: #55443a;
+    width: 100%;
+    height: 66px;
+}
+
+.lists{
+    float:left;
+}
+
+@media screen and (max-width:961px) {
+    .logo{
+        height: 45px;
+        width: 45px;
+        background: url("https://www.starbucks.co.kr/common/img/common/logo.png");
+        background-size:45px;
+        border:transparent;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-top: 8px;
+        
+    }
+    .wrap_inner{
+        display: none;
+    }
+    .icons{
+        font-size: 55px;
+        color:#55443a;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (min-width:961px)and (max-width:1000px){
+    .wrap{
+        background-color: #f6f5f0;
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content:center;
+        position:fixed;
+        z-index: 1;
+        align-items: center;
+        justify-items: center;
+    }
+    .logo{
+        height: 75px;
+        width: 75px;
+        background: url("https://www.starbucks.co.kr/common/img/common/logo.png");
+        background-size:75px;
+        border:transparent;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-top: 8px;
+        
+        position: absolute;
+    }
+    .icons{
+        display: none;
+    }
+    .wrap_inner{
+        display: block;
+        overflow:hidden;
+    }
+
+}
+
+@media screen and (min-width:1001px){
+
+}

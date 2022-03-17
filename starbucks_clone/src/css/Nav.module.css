@@ -46,17 +46,15 @@
     float:left;
     color:#333;
     font: normal 13px Avenir, Arial, georgia;
-    padding-left:15px;
+    padding-left:30px;
     padding-right: 18px;
-
-
 }
 .list:nth-child(-n+3){
     border-right: 1px solid #e6e5e0;
 }
 a{
     text-decoration: none;
-    color: #666;
+    color: #555;
 }
 @media screen and (max-width:961px) {
     .menus{
@@ -139,6 +137,7 @@ a{
 }
 .wrap_inner2{
     height: 50px;
+    bottom:0px;
     right:20px;
     position: absolute;
 }

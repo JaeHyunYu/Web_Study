@@ -9,6 +9,8 @@ function Nav() {
     const lists2 = ['COFFEE', 'MENU', 'STORE', 'RESPONSIBILITY', 'STARBUCKS REWARDS', 'WHAT\'S NEW'];
     return (
         <div className={styles.wrap}>
+            <a href="/" className={styles.logo}></a>
+
             <div className={styles.menus}>
                 <div className={styles.wrap_inner1}>
                     <nav>
@@ -26,8 +28,9 @@ function Nav() {
                     </nav>
                 </div>
 
+
+
             </div>
-            <a href="/" className={styles.logo}></a>
 
             <div className={styles.icons}>
                 <MdPerson />
@@ -36,6 +39,16 @@ function Nav() {
 
             </div>
 
+            <div className={styles.test}>
+                <ul>
+                    <li>
+                        test1
+                    </li>
+                    <li>
+                        test2
+                    </li>
+                </ul>
+            </div>
         </div >
     );
 }

@@ -35,3 +35,14 @@
     top:70px;
     left:220px;
 }
+
+
+@media screen and (min-width:961px)and (max-width:1130px){
+.wrap{
+    padding-top: 120px;
+}
+
+.drink1{
+    top:250px;
+}
+}

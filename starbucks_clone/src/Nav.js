@@ -27,16 +27,12 @@ function Nav() {
                         </ul>
                     </nav>
                 </div>
-
-
-
             </div>
 
             <div className={styles.icons}>
                 <MdPerson />
                 <MdLocationOn />
                 <GiHamburgerMenu />
-
             </div>
 
             <div className={styles.test}>

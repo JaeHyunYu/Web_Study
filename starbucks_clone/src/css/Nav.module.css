@@ -8,7 +8,7 @@
     align-content:center;
     position:fixed;
     z-index: 1;
-    
+   
 }
 
 .logo{
@@ -28,7 +28,7 @@
     color:#55443a;
     margin-right: 5px;
 }
-.ul{
+ul{
     padding:0;
     margin:0;
     list-style:none;
@@ -142,4 +142,29 @@ a{
     position: absolute;
 }
 
+.dropdown{
+    display: block;
+    width: 100%;
+    position: absolute;
+    padding-top: 110px;
+}
+
+.dropdown_content{
+    position: absolute;
+    width: 100%;
+    background-color:#2C2A29 ;
+    margin-left: 0;
+    color: #999; /*#fff*/
+}
+
+.dropdown_items{
+    font-size: 12px;
+    padding:30px;
+}
+.list2:hover{
+    background-color: #2C2A29;
+}
+.list2:hover .dropdown {
+    display: block;
+}
 }

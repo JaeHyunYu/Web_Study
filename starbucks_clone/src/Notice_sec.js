@@ -5,8 +5,6 @@ import { BsPlusCircle } from 'react-icons/bs';
 function Notice_sec() {
     return (
         <div className={styles.wrap}>
-
-
             <div className={styles.section1}>
                 <div className={styles.notice_div}>
                     <p className={styles.section_font} style={{ color: 'white' }}>공지사항</p>

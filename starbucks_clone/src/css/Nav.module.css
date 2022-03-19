@@ -43,11 +43,15 @@ ul{
     background:transparent;
 }
 .list2{
+    align-items: center;
+    justify-self: center;
+    display: flex;
+    height: 50px;
     float:left;
     color:#333;
     font: normal 13px Avenir, Arial, georgia;
-    padding-left:30px;
-    padding-right: 18px;
+    padding-left:24px;
+    padding-right: 24px;
 }
 .list:nth-child(-n+3){
     border-right: 1px solid #e6e5e0;
@@ -136,6 +140,7 @@ a{
     padding:0;
 }
 .wrap_inner2{
+    display: flex;
     height: 50px;
     bottom:0px;
     right:20px;
@@ -143,10 +148,12 @@ a{
 }
 
 .dropdown{
-    display: block;
+    display: none;
     width: 100%;
     position: absolute;
-    padding-top: 110px;
+    padding-top: 18px;
+    
+    
 }
 
 .dropdown_content{

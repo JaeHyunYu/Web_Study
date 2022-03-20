@@ -4,12 +4,9 @@ import { MdFormatIndentDecrease, MdLocationOn, MdPerson, MdSearch } from 'react-
 import { GiHamburgerMenu } from 'react-icons/gi';
 import styles from './css/Nav.module.css';
 function Nav() {
-    /*
-        onMouseOver={() => setIsHovering(1)}
-                            onMouseOut={() => setIsHovering(0)}*/
+
     const lists = ['Sign in', 'My Starbucks', 'Customer Service & MdFormatIndentDecrease', 'Find a Store'];
     const lists2 = ['COFFEE', 'MENU', 'STORE', 'RESPONSIBILITY', 'STARBUCKS REWARDS', 'WHAT\'S NEW'];
-    const [isHovering, setIsHovering] = useState(0);
     return (
         <div className={styles.wrap}>
             <a href="/" className={styles.logo}></a>

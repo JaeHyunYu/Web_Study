@@ -8,9 +8,7 @@
     align-content:center;
     position:fixed;
     z-index: 1;
-   
 }
-
 .logo{
     height: 45px;
     width: 45px;
@@ -20,9 +18,7 @@
     border-radius: 50%;
     margin-left: 5px;
     margin-top: 8px;
-    
 }
-
 .icons{
     font-size: 55px;
     color:#55443a;
@@ -75,7 +71,6 @@ a{
         margin-top: 8px;
         
     }
-
     .icons{
         font-size: 55px;
         color:#55443a;
@@ -155,9 +150,9 @@ a{
     height: 0vh;
     position: absolute;
     left:0;
-    padding-top: 18px;
+    padding-top: 17px;
     transition-property: opacity;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     
 }
 
@@ -166,7 +161,6 @@ a{
     width: 100%;
     background-color:#2C2A29 ;
     margin-left: 0;
-    
     color: #999; /*#fff*/
 }
 
@@ -176,9 +170,14 @@ a{
 }
 .list2:hover{
     background-color: #2C2A29;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 .list2:hover .dropdown {
    opacity: 1;
    visibility: visible;
+}
+.list2:hover a{
+    color:#669900;
 }
 }

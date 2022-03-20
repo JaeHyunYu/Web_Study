@@ -71,7 +71,6 @@ function Nav() {
                                                 </ul>
                                             </div>
                                         </div>
-
                                     </li>
                                 </div>
                             )}
@@ -83,12 +82,6 @@ function Nav() {
                 <MdPerson />
                 <MdLocationOn />
                 <GiHamburgerMenu />
-            </div>
-
-
-
-            <div>
-
             </div>
         </div >
 

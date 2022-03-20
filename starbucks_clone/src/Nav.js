@@ -7,6 +7,7 @@ function Nav() {
 
     const lists = ['Sign in', 'My Starbucks', 'Customer Service & MdFormatIndentDecrease', 'Find a Store'];
     const lists2 = ['COFFEE', 'MENU', 'STORE', 'RESPONSIBILITY', 'STARBUCKS REWARDS', 'WHAT\'S NEW'];
+
     return (
         <div className={styles.wrap}>
             <a href="/" className={styles.logo}></a>
@@ -15,9 +16,13 @@ function Nav() {
                 <div className={styles.wrap_inner1}>
                     <nav>
                         <ul>
+                            <input type="checkbox" id="search" className={styles.search}></input>
+                            <label htmlFor="search" className={styles.search1}><MdSearch></MdSearch></label>
                             {lists.map(lists => <li className={styles.list} key={lists.id}><a href={"#"}>{lists}</a></li>)}
+
+
                         </ul>
-                        <p><a href="#"><MdSearch></MdSearch></a></p>
+
                     </nav>
                 </div>
                 <div className={styles.wrap_inner2}>

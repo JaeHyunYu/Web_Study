@@ -16,6 +16,10 @@ function Nav() {
                 <div className={styles.wrap_inner1}>
                     <nav>
                         <ul>
+                            {/*
+                            <form action="#" method="post" id="searchform">
+
+    </form>*/}
                             <input type="checkbox" id="search" className={styles.search}></input>
                             <label htmlFor="search" className={styles.search1}><MdSearch></MdSearch></label>
                             {lists.map(lists => <li className={styles.list} key={lists.id}><a href={"#"}>{lists}</a></li>)}

@@ -39,13 +39,16 @@ import crypto from "crypto";
  
 
 interface BlockShape{
-    hash:string;  // q블록의 고유값이라고 생각하면됨
-    // 해쉬를 이용하여 데이터를 보호하는데 블록정보가 수정되지 않음을 해쉬로 검증함!
+    hash:string;   
     prevHash:string;
-    height:number; //블록의 위치를 의미
-    data: string; //블록이 보호할 데이터
+    height:number; 
+    data: string; 
 }
 
+// q블록의 고유값이라고 생각하면됨
+    // 해쉬를 이용하여 데이터를 보호하는데 블록정보가 수정되지 않음을 해쉬로 검증함!
+   //블록의 위치를 의미
+    //블록이 보호할 데이터
 class Block implements BlockShape{
     public hash:string;
     constructor(
@@ -61,3 +64,30 @@ const toHash=`${prevHash}${height}${data}`;
 return crypto.createHash("sha256").update(toHash).digest("hex");
     }
 }
+
+class Blockchain{
+    private blocks: Block[]
+    constructor(){
+        this.blocks=[];
+    }
+    private getPrevHash(){
+        if(this.blocks.length===0) return "" //길이가0이면 첫번째 해쉬가 없기때문에!
+        return this.blocks[this.blocks.length-1].hash; // 블럭의 마지막 해쉬값 리턴!
+    }
+    public addBlock(data:string){// 새로운 블록을 추가할때 data도 같이 보내줘야함
+const newBlock = new Block(this.getPrevHash(),this.blocks.length+1,data);
+this.blocks.push( newBlock); // 새로운 블록 생성시 추가!
+
+    } 
+    public getBlocks(){ //block에 접근할 수 있는 함수
+        return [...this.blocks];
+    }
+}
+
+const blockchain = new Blockchain();
+
+blockchain.addBlock("First");
+blockchain.addBlock("Second");
+blockchain.addBlock("Third");
+
+console.log(blockchain.getBlocks());

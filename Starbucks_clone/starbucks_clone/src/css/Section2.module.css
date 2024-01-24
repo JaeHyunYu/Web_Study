@@ -1,0 +1,68 @@
+.wrap{
+    height: 500px;
+    background-color: #1e3932;
+    display: flex;
+    justify-content: center;
+}
+
+
+.section1{
+    width: 30%;
+}
+.line{
+    width: 100%;
+    border-color: #49625c;
+    margin-top:15px;
+    
+}
+.Bigfont{
+    font-size: 24px;
+}
+.section2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.info_con{ 
+    width: 100%;
+    font-family:'Malgun Gothic';
+    font-size: 17px;
+    line-height: 1.4;
+    color: white;
+}
+.gift_con{
+    width: 100%;
+    font-family:'Malgun Gothic';
+    
+    line-height: 1.4;
+    color: white;
+}
+
+.logo{
+    margin-top: 70px;
+    width: 248px;
+    height: 215px;
+}
+
+.button1{
+    background-color: #00704a;
+    border-radius: 5px;
+    border:none;
+    font-family:'Malgun Gothic';
+    width: 92px;
+    color: white;
+    height: 38px;
+    margin-right: 5px;
+}
+.button2{
+    background-color: transparent;
+    border-radius: 5px;
+    border: solid 2px;
+    font-family:'Malgun Gothic';
+    color: white;
+    height: 38px;
+    padding: 8px 25px 18px 25px;
+    
+}
+

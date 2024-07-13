@@ -16,7 +16,7 @@
   ```
 
   ```jsx
-  <Text style={{ fontSize: 45 }}>This is inline style</Text>
+  <Text style={ { fontSize: 45 } }>This is inline style</Text>
   ```
 
   - 상단과 같이 Component들에 인라인형식으로 style={} 이런식으로 넣어도 상관 없음
@@ -26,7 +26,7 @@
   [Layout](https://www.notion.so/Layout-21ed89e334dd44e8a317a4b133041dfb)
 
   ```jsx
-  <View style={ { flex: 1 }}>
+  <View style={ { flex: 1 } }>
     <View style={ { flex: 1, backgroundColor: "red", flexDirection: "row" } }>
       <View style={ { flex: 1, backgroundColor: "gray" } }></View>
       <View style={ { flex: 1, backgroundColor: "black" } }></View>
@@ -138,7 +138,7 @@
   ## ActivityIndicator
   [ActivityIndicator](https://www.notion.so/ActivityIndicator-f329dc33f8114ed08bd409775ac79ecb)
   ```jsx
-  <ActivityIndicator color="black" size="large" style={{ marginTop: 10 }} />
+  <ActivityIndicator color="black" size="large" style={ { marginTop: 10 } } />
   ```
   - ActivityIndicator 는 loading을 하는 react native에서 제공하는 Component임
 - Other Components

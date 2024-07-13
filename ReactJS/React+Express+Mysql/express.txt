@@ -1,1 +1,16 @@
-ㅇ
+dependency 설치 시작 필요
+npm install [dependecy 이름]
+ - epxress : 백엔드 프레임워크
+ - cors : 백엔드와 프론트에서 서로다른 프레임워크를 개발했을때 cross origin 문제가 발생함 -> 이를 해결해주는 역할
+ - json : json 파싱
+ - body-parser : 요청한 body를 받기위한 dependency
+ - nodemon : index.js 저장시 서버 새로고침을 위한 dependency (바로 반영을 위함)
+
+react파일에서 
+npm run build하면 html파일이 만들어짐
+서버에서 사용하려면 서버에서 react html 보내주면됨
+서버에서 db로 뽑고 front로 전송하면 됨 react가 쓰는건 client-side-rendering임
+
+
+애플코딩 : https://codingapple.com/unit/nodejs-react-integration/
+유튭 https://www.youtube.com/watch?v=A_u9Cu2uz40&list=PLV9zd3otBRt5K-tNQpBI5_qfEJLvlaUVc&index=3

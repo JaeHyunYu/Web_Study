@@ -21,10 +21,16 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   List<int> numbers = [];
-
+  bool show = true;
   void onclicked() {
     setState(() {
       numbers.add(numbers.length);
+    });
+  }
+
+  void toggleTitle() {
+    setState(() {
+      show = !show;
     });
   }
 
@@ -32,6 +38,13 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.red,
+          ),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
         body: Center(
@@ -39,19 +52,53 @@ class _AppState extends State<App> {
             mainAxisAlignment:
                 MainAxisAlignment.center,
             children: [
-              Text(
-                'click',
-                style: TextStyle(fontSize: 30),
-              ),
-              for (var n in numbers) Text('$n'),
+              show ? MyTitle() : Text('nothing'),
               IconButton(
-                iconSize: 30,
-                onPressed: onclicked,
-                icon: Icon(Icons.add_box_rounded),
+                onPressed: toggleTitle,
+                icon: Icon(Icons.remove_red_eye),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyTitle extends StatefulWidget {
+  const MyTitle({super.key});
+
+  @override
+  State<MyTitle> createState() => _MyTitleState();
+}
+
+class _MyTitleState extends State<MyTitle> {
+  int count = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    print('inistate');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Title',
+      style: TextStyle(
+        fontSize: 30,
+        color:
+            Theme.of(
+              context,
+            ).textTheme.titleLarge!.color,
       ),
     );
   }

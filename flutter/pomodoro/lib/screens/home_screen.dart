@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const twentyfivemin = 1500;
+  //static const twentyfivemin = 1500;
   int totalSeconds = 10;
   bool isRunning = false;
   int totalPomodoros = 0;
@@ -46,6 +46,14 @@ class _HomeScreenState extends State<HomeScreen> {
     timer.cancel();
     setState(() {
       isRunning = !isRunning;
+    });
+  }
+
+  void reset() {
+    timer.cancel();
+    setState(() {
+      isRunning = false;
+      totalSeconds = 10;
     });
   }
 
@@ -90,21 +98,38 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 3,
             child: Center(
-              child: IconButton(
-                iconSize: 98,
-                color:
-                    Theme.of(context).cardColor,
-                onPressed:
-                    isRunning
-                        ? onPausedPressed
-                        : onStartPressed,
-                icon: Icon(
-                  isRunning
-                      ? Icons
-                          .pause_circle_filled_outlined
-                      : Icons
-                          .play_circle_fill_outlined,
-                ),
+              child: Column(
+                children: [
+                  IconButton(
+                    iconSize: 98,
+                    color:
+                        Theme.of(
+                          context,
+                        ).cardColor,
+                    onPressed:
+                        isRunning
+                            ? onPausedPressed
+                            : onStartPressed,
+                    icon: Icon(
+                      isRunning
+                          ? Icons
+                              .pause_circle_filled_outlined
+                          : Icons
+                              .play_circle_fill_outlined,
+                    ),
+                  ),
+                  IconButton(
+                    iconSize: 98,
+                    color:
+                        Theme.of(
+                          context,
+                        ).cardColor,
+                    onPressed: reset,
+                    icon: Icon(
+                      Icons.restart_alt_outlined,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

@@ -3,7 +3,6 @@ import 'package:real_toonapp/services/api_service.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  ApiService().getTodaysToons();
   runApp(const MyApp());
 }
 
